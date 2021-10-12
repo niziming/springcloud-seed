@@ -1,4 +1,4 @@
-package cn.zm.plus.config;
+package cn.zm.plus.utils;
 
 import org.springframework.beans.BeanUtils;
 

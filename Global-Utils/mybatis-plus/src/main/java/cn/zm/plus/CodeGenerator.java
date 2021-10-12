@@ -1,6 +1,6 @@
 package cn.zm.plus;
 
-import cn.zm.plus.config.ObjectConvert;
+import cn.zm.plus.utils.ObjectConvert;
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
@@ -209,7 +209,7 @@ public class CodeGenerator {
         strategy.setEntityLombokModel(true);
         strategy.setRestControllerStyle(true);
         // 公共父类
-        strategy.setSuperControllerClass("cn.zm.plus.config.BaseController");
+        strategy.setSuperControllerClass("cn.zm.plus.base.BaseController");
         // 写于父类中的公共字段
         //strategy.setSuperEntityColumns("id");
         strategy.setInclude(tables);

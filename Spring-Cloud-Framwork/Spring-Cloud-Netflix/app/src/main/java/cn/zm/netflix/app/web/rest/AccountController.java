@@ -2,7 +2,7 @@ package cn.zm.netflix.app.web.rest;
 
 import cn.zm.netflix.app.web.service.IAccountService;
 import org.springframework.web.bind.annotation.RestController;
-import cn.zm.plus.config.BaseController;
+import cn.zm.plus.base.BaseController;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import cn.zm.common.common.ResponseResult;
 import cn.zm.netflix.app.web.entity.dto.AccountDTO;

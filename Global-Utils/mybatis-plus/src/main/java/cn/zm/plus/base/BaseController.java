@@ -1,4 +1,4 @@
-package cn.zm.plus.config;
+package cn.zm.plus.base;
 
 import cn.hutool.core.convert.Convert;
 import com.baomidou.mybatisplus.core.metadata.IPage;
