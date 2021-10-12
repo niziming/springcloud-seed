@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/eureka/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Global-Utils/async-programing/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Global-Utils/common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Global-Utils/mybatis-plus/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Global-Utils/mybatis-plus/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Global-Utils/netty/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Global-Utils/tk-mybatis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-Cloud-Framwork/Apache-Dubbo-Zookeeper/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-Cloud-Framwork/Spring-Cloud-Netflix/eureka/src/main/java" charset="UTF-8" />
   </component>
 </project>

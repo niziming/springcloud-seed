@@ -8,7 +8,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.2.4.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <!--<relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
     </parent>
 
     <packaging>pom</packaging>
@@ -16,13 +16,33 @@
     <artifactId>SpringCloud-Seed</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <description>
+        三种主流方案的微服务种子项目
+        1.Spring Cloud Netflix
+        2.Spring-Cloud-Alibaba
+        3.Apache-Dubbo-Zookeeper
+    </description>
+
     <modules>
-        <module>eureka</module>
+        <module>Global-Utils</module>
+        <module>Spring-Cloud-Framwork</module>
     </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
     </properties>
 
+    <dependencies>
+        <!-- spring-boot -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-dependencies</artifactId>
+            <version>${spring-boot.version}</version>
+            <type>pom</type>
+        </dependency>
+    </dependencies>
+
+    <build></build>
 </project>
