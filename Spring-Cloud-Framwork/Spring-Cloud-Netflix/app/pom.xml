@@ -3,28 +3,31 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>SpringCloud-Seed</artifactId>
+        <artifactId>Spring-Cloud-Netflix</artifactId>
         <groupId>cn.zm</groupId>
         <version>1.0-SNAPSHOT</version>
-        <!--<relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>Global-Utils</artifactId>
+    <artifactId>NetFlixApp</artifactId>
 
-    <packaging>pom</packaging>
-
-    <description>全局工具模块</description>
-    <modules>
-        <module>common</module>
-        <module>tk-mybatis</module>
-        <module>mybatis-plus</module>
-        <module>netty</module>
-        <module>async-programing</module>
-    </modules>
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <spring-cloud.version></spring-cloud.version>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>cn.zm</groupId>
+            <artifactId>mybatis-plus</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
+    </dependencies>
+
 
 </project>

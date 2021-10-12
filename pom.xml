@@ -32,17 +32,36 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
+        <base.version>1.0-SNAPSHOT</base.version>
     </properties>
 
-    <dependencies>
-        <!-- spring-boot -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-dependencies</artifactId>
-            <version>${spring-boot.version}</version>
-            <type>pom</type>
-        </dependency>
-    </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <!-- spring-boot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.zm</groupId>
+                <artifactId>common</artifactId>
+                <version>${base.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.zm</groupId>
+                <artifactId>mybatis-plus</artifactId>
+                <version>${base.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.zm</groupId>
+                <artifactId>tk-mybatis</artifactId>
+                <version>${base.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build></build>
 </project>

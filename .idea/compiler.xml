@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Apache-Dubbo-Zookeeper" />
+        <module name="app" />
         <module name="async-programing" />
         <module name="common" />
         <module name="eureka" />
@@ -25,6 +26,7 @@
       <module name="Spring-Cloud-Framwork" options="" />
       <module name="Spring-Cloud-Netflix" options="" />
       <module name="SpringCloud-Seed" options="" />
+      <module name="app" options="-parameters" />
       <module name="async-programing" options="-parameters" />
       <module name="common" options="-parameters" />
       <module name="eureka" options="-parameters" />
