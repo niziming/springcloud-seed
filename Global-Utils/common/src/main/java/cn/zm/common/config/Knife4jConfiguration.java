@@ -10,10 +10,14 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
 
-/**
- * @author Mr_W
- * @date now
- * @description swagger 配置
+/** 功能描述: <br>
+ * <Knife4j 配置>
+ *
+ * @param null
+ *
+ * @author 倪子铭
+ * @date 2021/10/12 11:23
+ * @return
  */
 @Configuration
 @EnableSwagger2WebMvc

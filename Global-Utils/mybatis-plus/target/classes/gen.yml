@@ -7,5 +7,5 @@ spring:
     password: root
 mybatis-plus:
   generate:
-    module: mybatis-plus
+    module: Global-Utils/mybatis-plus
     package: cn.zm.plus

@@ -15,7 +15,15 @@ import org.springframework.core.io.ClassPathResource;
 
 import java.util.*;
 
-// 演示例子，执行 main 方法控制台输入模块表名回车自动生成对应项目目录中
+/** 功能描述: <br>
+ * <逆向工程生成类>
+ *
+ * @param null
+ *
+ * @author 倪子铭
+ * @date 2021/10/12 13:29
+ * @return
+ */
 public class CodeGenerator {
     private static YamlPropertiesFactoryBean factoryBean = new YamlPropertiesFactoryBean();;
     private static Properties object;

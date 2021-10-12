@@ -31,7 +31,6 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
         <base.version>1.0-SNAPSHOT</base.version>
     </properties>
 
@@ -41,7 +40,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
+                <version>${parent.version}</version>
                 <type>pom</type>
             </dependency>
 

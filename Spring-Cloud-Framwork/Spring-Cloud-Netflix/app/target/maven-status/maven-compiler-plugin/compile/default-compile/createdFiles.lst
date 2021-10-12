@@ -1,0 +1,8 @@
+cn\zm\netflix\app\web\entity\dto\AccountDTO.class
+cn\zm\netflix\app\web\entity\vo\AccountVO.class
+cn\zm\netflix\app\web\service\impl\AccountServiceImpl.class
+cn\zm\netflix\app\web\entity\Account.class
+cn\zm\netflix\app\web\rest\AccountController.class
+cn\zm\netflix\app\web\mapper\AccountMapper.class
+cn\zm\netflix\app\web\service\IAccountService.class
+cn\zm\netflix\app\NetFlixApp.class

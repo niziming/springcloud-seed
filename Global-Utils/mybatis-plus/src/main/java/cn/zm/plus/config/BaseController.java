@@ -6,8 +6,6 @@ import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -16,10 +14,12 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Objects;
 import java.util.Optional;
 
-/**
- * @author Mr_W
- * @date 2021/2/20 18:50
- * @description 基础控制器
+/** 功能描述: <br>
+ * <基础controller>
+ *
+ * @author 倪子铭
+ * @date 2021/10/12 13:28
+ * @return
  */
 @Slf4j
 public class  BaseController {

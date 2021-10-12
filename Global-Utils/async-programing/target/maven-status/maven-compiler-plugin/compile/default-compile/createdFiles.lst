@@ -1,0 +1,5 @@
+cn\zm\async\rest\AsycController.class
+cn\zm\async\service\AsyncService.class
+cn\zm\async\service\impl\CompositeServiceImpl.class
+cn\zm\async\service\CompositeService.class
+cn\zm\async\service\impl\AsyncServiceImpl.class
