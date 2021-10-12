@@ -1,4 +1,4 @@
-package cn.zm.common.config;
+package cn.zm.common.base;
 
 import cn.zm.common.enums.ResultEnum;
 import lombok.extern.slf4j.Slf4j;

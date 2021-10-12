@@ -1,7 +1,8 @@
-package cn.zm.common.common;
+package cn.zm.common.base;
 
 
 import cn.hutool.core.util.StrUtil;
+import cn.zm.common.base.ServiceExceptionBuilder;
 import cn.zm.common.enums.ResultEnum;
 import org.apache.commons.lang3.StringUtils;
 

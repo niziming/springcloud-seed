@@ -1,6 +1,6 @@
 package cn.zm.netty.contoller;
 
-import cn.zm.common.config.ResponseResult;
+import cn.zm.common.base.ResponseResult;
 import cn.zm.common.enums.ResultEnum;
 import cn.zm.netty.entity.WebSocketEntity;
 import cn.zm.netty.handler.NettyHandler;
