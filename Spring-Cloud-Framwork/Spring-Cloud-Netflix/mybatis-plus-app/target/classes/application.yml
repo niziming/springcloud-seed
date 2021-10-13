@@ -1,0 +1,17 @@
+server:
+  port: 8701
+spring:
+  profiles:
+    active: common, plus
+  application:
+    name: netflix-mybatisplus-app
+
+logging:
+  level:
+    cn.zm: debug
+
+# eureka
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8700/eureka/
