@@ -3,7 +3,7 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true
     use-generated-keys: true
-  typeAliasesPackage: cn.zm.tk.entity
+  typeAliasesPackage: cn.zm.**.entity
   mapperLocations: classpath*:/mapper/**/*.xml
 #mappers 多个接口时逗号隔开
 mapper:

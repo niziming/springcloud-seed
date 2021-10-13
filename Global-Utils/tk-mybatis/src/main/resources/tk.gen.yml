@@ -2,10 +2,10 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/testdb?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8
+    url: jdbc:mysql://localhost:3306/test_dev?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8
     username: root
     password: root
 mybatis-plus:
   generate:
-    module: data
-    package: com.xr.inspect.data
+    module: Global-Utils/tk-mybatis
+    package: cn.zm.tk

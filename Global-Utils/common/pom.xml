@@ -21,7 +21,7 @@
         <druid.version>1.1.22</druid.version>
         <!--<lombok.version>1.18.16</lombok.version>-->
         <hutool.version>5.3.10</hutool.version>
-        <knife4j.version>2.0.7</knife4j.version>
+        <knife4j.version>2.0.9</knife4j.version>
         <fastjson.version>1.2.58</fastjson.version>
     </properties>
 
@@ -82,11 +82,12 @@
         </dependency>
 
         <!-- knife4j -->
-        <dependency>
-            <groupId>com.github.xiaoymin</groupId>
-            <artifactId>knife4j-micro-spring-boot-starter</artifactId>
-            <version>${knife4j.version}</version>
-        </dependency>
+        <!--微服务-->
+        <!--<dependency>-->
+        <!--    <groupId>com.github.xiaoymin</groupId>-->
+        <!--    <artifactId>knife4j-micro-spring-boot-starter</artifactId>-->
+        <!--    <version>${knife4j.version}</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>knife4j-spring-boot-starter</artifactId>

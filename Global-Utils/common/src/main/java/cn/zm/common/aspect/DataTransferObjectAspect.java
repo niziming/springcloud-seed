@@ -1,7 +1,7 @@
 package cn.zm.common.aspect;
 
 import cn.zm.common.annotation.SetNull;
-import cn.zm.common.common.ServiceException;
+import cn.zm.common.base.ServiceException;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;

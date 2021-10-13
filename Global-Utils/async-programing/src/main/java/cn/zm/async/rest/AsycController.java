@@ -1,7 +1,7 @@
 package cn.zm.async.rest;
 
 import cn.zm.async.service.CompositeService;
-import cn.zm.common.common.ResponseResult;
+import cn.zm.common.base.ResponseResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;

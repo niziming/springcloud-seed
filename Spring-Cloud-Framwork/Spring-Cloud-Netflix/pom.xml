@@ -15,7 +15,8 @@
 
     <modules>
         <module>eureka</module>
-        <module>app</module>
+        <module>mybatis-plus-app</module>
+        <module>tk-mybatis-app</module>
     </modules>
 
     <packaging>pom</packaging>

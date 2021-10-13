@@ -23,7 +23,7 @@ open class ${table.serviceImplName} : ${superServiceImplClass}<${table.mapperNam
 public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.mapperName}, ${entity}> implements ${table.serviceName} {
     @Override
     public IPage<${entity? cap_first}VO> selectByPage(IPage<${entity}> page, ${entity? cap_first}DTO ${table.name}) {
-        IPage<${entity}> ${table.name}Page = baseMapper.selectPage(page, new QueryWrapper<>());
+        IPage<${entity}> ${table.name}Page = baseMapper.selectPage(page, new QueryWrapper<>(${table.name}.convert()));
         return ConvertUtil.buildPage(${table.name}Page);
     }
 }
