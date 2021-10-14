@@ -20,7 +20,6 @@
         <module>tk-mybatis</module>
         <module>mybatis-plus</module>
         <module>netty</module>
-        <module>web</module>
         <module>async-programing</module>
     </modules>
     <properties>

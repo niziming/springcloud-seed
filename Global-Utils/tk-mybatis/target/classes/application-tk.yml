@@ -3,7 +3,7 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true
     use-generated-keys: true
-  typeAliasesPackage: cn.zm.*.entity
+  typeAliasesPackage: cn.zm.netflix.mybatisplus.web.entity
   mapperLocations: classpath*:/mapper/**/*.xml
 #mappers 多个接口时逗号隔开
 mapper:

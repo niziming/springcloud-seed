@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zm.netflix.tkmybatis.web.mapper.AccountMapper">
+    <!--<insert id="add"-->
+    <!--        useGeneratedKeys="true"-->
+    <!--        keyProperty="web_id"-->
+    <!--        parameterType="cn.zm.tk.web.entity.Account">-->
+    <!--    insert into account(-->
+    <!--            id,-->
+    <!--            niconame,-->
+    <!--            username,-->
+    <!--            pwd-->
+    <!--    )values(-->
+    <!--            #{id},-->
+    <!--            #{niconame},-->
+    <!--            #{username},-->
+    <!--            #{pwd}-->
+    <!--    )-->
+    <!--</insert>-->
+
+    <!--<select id="get"-->
+    <!--        parameterType="cn.zm.tk.web.entity.Account"-->
+    <!--        resultType="cn.zm.tk.web.entity.Account">-->
+    <!--    select-->
+    <!--        v.id,-->
+    <!--        v.niconame,-->
+    <!--        v.username,-->
+    <!--        v.pwd-->
+    <!--    from-->
+    <!--    account v-->
+    <!--    where-->
+    <!--    1 = 1-->
+    <!--        <if test="id != null and id != ''"> and v.id-->
+    <!--            = #{id}</if>-->
+    <!--        <if test="niconame != null and niconame != ''"> and v.niconame-->
+    <!--            = #{niconame}</if>-->
+    <!--        <if test="username != null and username != ''"> and v.username-->
+    <!--            = #{username}</if>-->
+    <!--        <if test="pwd != null and pwd != ''"> and v.pwd-->
+    <!--            = #{pwd}</if>-->
+    <!--</select>-->
+
+    <!--<select id="getById"-->
+    <!--        parameterType="cn.zm.tk.web.entity.Account"-->
+    <!--        resultType="cn.zm.tk.web.entity.Account">-->
+    <!--    select-->
+    <!--        v.id,-->
+    <!--        v.niconame,-->
+    <!--        v.username,-->
+    <!--        v.pwd-->
+    <!--    from-->
+    <!--    account v-->
+    <!--    where-->
+    <!--    1 = 1-->
+    <!--    and v.web_id = #{web_id}-->
+    <!--    limit 1-->
+    <!--</select>-->
+
+    <!--<update id="update"-->
+    <!--        parameterType="cn.zm.tk.web.entity.Account">-->
+    <!--    update account v-->
+    <!--    set v.web_id = #{web_id}-->
+    <!--            <if test="id != null and id != ''"> , v.id-->
+    <!--                = #{id}</if>-->
+    <!--            <if test="niconame != null and niconame != ''"> , v.niconame-->
+    <!--                = #{niconame}</if>-->
+    <!--            <if test="username != null and username != ''"> , v.username-->
+    <!--                = #{username}</if>-->
+    <!--            <if test="pwd != null and pwd != ''"> , v.pwd-->
+    <!--                = #{pwd}</if>-->
+    <!--    where v.web_id = #{web_id}-->
+    <!--</update>-->
+
+    <!--<delete id="del"-->
+    <!--        parameterType="java.lang.String">-->
+    <!--    delete from account-->
+    <!--    where web_id = #{web_id}-->
+    <!--</delete>-->
+</mapper>

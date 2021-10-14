@@ -8,6 +8,8 @@ import cn.zm.netflix.tkmybatis.web.mapper.AccountMapper;
 import cn.zm.netflix.tkmybatis.web.service.IAccountService;
 import cn.zm.tk.utils.ConvertUtil;
 import cn.zm.tk.utils.PageBean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RestController;
 import cn.zm.tk.base.BaseController;
 import java.util.stream.Collectors;
@@ -32,7 +34,6 @@ import java.util.List;
 @RestController
 @Api(tags = "接口")
 public class AccountController extends BaseController {
-
     @Resource
     private IAccountService accountService;
     @Resource
@@ -49,7 +50,10 @@ public class AccountController extends BaseController {
     public ResponseResult<PageBean<AccountVO>> page(@Validated AccountDTO accountDTO) {
         // TODO 分页查询
         Page<AccountVO> page = getPage();
-        accountService.selectByProperty(accountDTO.convert());
+        Account convert = accountDTO.convert();
+        List<Account> accounts = accountService.selectAll();
+        accountService.selectByProperty(convert);
+        // accountService.selectByProperty(accountDTO.convert());
         return ResponseResult.succ(new PageBean(page));
     }
 

@@ -15,12 +15,12 @@ import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * @ClassName BaseServiceImpl
- * @Description 基础service
- * @Author yeehaw
- * @Date 2019/12/12 10:58
- * @Version 1.0.0
+/** 功能描述: <br>
+ * <基础service>
+ *
+ * @author 倪子铭
+ * @date 2021/10/13 16:33
+ * @return
  */
 public abstract class BaseServiceImpl<T> implements BaseService<T> {
     @Resource
