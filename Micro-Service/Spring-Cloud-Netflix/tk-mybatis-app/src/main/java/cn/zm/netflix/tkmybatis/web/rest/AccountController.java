@@ -1,5 +1,6 @@
 package cn.zm.netflix.tkmybatis.web.rest;
 
+import cn.hutool.core.util.ArrayUtil;
 import cn.zm.common.base.ResponseResult;
 import cn.zm.netflix.tkmybatis.web.entity.Account;
 import cn.zm.netflix.tkmybatis.web.entity.dto.AccountDTO;
@@ -50,14 +51,12 @@ public class AccountController extends BaseController {
         @ApiImplicitParam(name = "orderByColumn", value = "排序字段"),
         @ApiImplicitParam(name = "isDesc", value = "是否降序")
     })
-    public ResponseResult<PageResult<AccountVO>> page(@Validated AccountDTO accountDTO) throws IllegalAccessException {
+    public ResponseResult<PageResult<AccountVO>> page(@Validated AccountDTO accountDTO) {
         // TODO 分页查询
         Page<AccountVO> page = getPage();
         List<Account> accounts = accountService.likeByProperty(accountDTO.convert());
         return ResponseResult.succ(
-                PageResult.build(Objects.isNull(page)
-                        ? ConvertUtil.convertList(accounts)
-                        : page)
+            PageResult.build(Objects.isNull(page) ? accounts : page)
         );
     }
 

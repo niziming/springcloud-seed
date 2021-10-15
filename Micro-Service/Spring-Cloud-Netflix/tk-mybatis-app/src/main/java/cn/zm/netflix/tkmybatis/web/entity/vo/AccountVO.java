@@ -19,6 +19,5 @@ public class AccountVO {
     private Long id;
     private String niconame;
     private String username;
-    private String pwd;
 }
 

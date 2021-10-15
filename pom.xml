@@ -24,8 +24,8 @@
     </description>
 
     <modules>
-        <module>Global-Utils</module>
-        <module>Spring-Cloud-Framwork</module>
+        <module>basic</module>
+        <module>Micro-Service</module>
     </modules>
 
     <properties>

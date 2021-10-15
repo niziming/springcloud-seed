@@ -12,16 +12,18 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.BeanUtils;
+import org.springframework.context.annotation.Bean;
 
 import javax.persistence.Transient;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /** 功能描述: <br>
  * <分页对象封装>
  *
- * @author 倪子铭
+ * @author 十渊
  * @date 2021/10/15 10:53
  * @return
  */
@@ -42,24 +44,29 @@ public class PageResult<T> implements Serializable {
     @ApiModelProperty("结果")
     private List<T> result;
 
+
+    // public static <T> PageResult build(List<T> list) {
+    //     PageResult<T> pageResult = new PageResult<>();
+    //     if (list instanceof Page) {
+    //         BeanUtils.copyProperties(list, pageResult);
+    //     }
+    //     else pageResult.result = list;
+    //     return pageResult;
+    // }
+
     /** 功能描述: <br>
-     * <分页构造对象>
+     * <分页构建>
      *
      * @param list
      *
      * @author 倪子铭
-     * @date 2021/10/15 10:52
-     * @return
+     * @date 2021/10/15 15:15
+     * @return cn.zm.tk.utils.PageResult
      */
-    public static <T> PageResult build(List<T> list) {
-        PageResult<T> pageResult = new PageResult<>();
+    public static PageResult build(List list) {
+        PageResult pageResult = new PageResult();
         if (list instanceof Page) BeanUtils.copyProperties(list, pageResult);
-        else pageResult.result = list;
+        pageResult.result = ConvertUtil.convertList(list);
         return pageResult;
-    }
-
-    public static void main(String[] args) {
-        PageResult build = PageResult.build(new ArrayList<>());
-        System.out.println(JSONObject.toJSON(build));
     }
 }

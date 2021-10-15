@@ -47,8 +47,8 @@ public class BaseController {
             return null;
         }
         if (StringUtils.isNotBlank(orderByColumn)) {
-            if (Objects.isNull(isDesc)) {
-                return PageHelper.startPage(page, size, orderByColumn + " " + (isDesc ? "desc" : "asc"));
+            if (!Objects.isNull(isDesc)) {
+                return PageHelper.startPage(page, size, orderByColumn + " " + (isDesc ? "asc" : "desc"));
             }
         }
         return PageHelper.startPage(page, size);

@@ -20,7 +20,7 @@ import java.util.*;
  *
  * @param null
  *
- * @author 倪子铭
+ * @author 十渊
  * @date 2021/10/12 13:29
  * @return
  */
@@ -111,7 +111,7 @@ public class CodeGenerator {
         // GlobalConfig gc = new GlobalConfig();
         // String projectPath = System.getProperty("user.dir");
         gc.setOutputDir(projectPath + '/' + module + "/src/main/java");
-        gc.setAuthor("jermaine");
+        gc.setAuthor("十渊");
         gc.setOpen(false);
         gc.setSwagger2(true); //实体属性 Swagger2 注解
 
@@ -222,7 +222,7 @@ public class CodeGenerator {
     }
     private static void genDTO(String[] tables) {
         gc.setOutputDir(projectPath + '/' + module + "/src/main/java");
-        gc.setAuthor("jermaine");
+        gc.setAuthor("十渊");
         gc.setOpen(false);
         gc.setSwagger2(true); //实体属性 Swagger2 注解
         gc.setEntityName("%sDTO");
@@ -278,7 +278,7 @@ public class CodeGenerator {
     }
     private static void genVO(String[] tables) {
         gc.setOutputDir(projectPath + '/' + module + "/src/main/java");
-        gc.setAuthor("jermaine");
+        gc.setAuthor("十渊");
         gc.setOpen(false);
         gc.setSwagger2(true); //实体属性 Swagger2 注解
         gc.setEntityName("%sVO");

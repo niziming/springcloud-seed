@@ -63,7 +63,15 @@ public class ${table.controllerName} {
         // TODO 分页查询
         Page<<#if entity?ends_with("DTO")>${entity? cap_first? substring(0, entity? index_of("DTO"))}<#else>${entity? cap_first}</#if>VO> page = getPage();
         List<${entity}> result <#if entity?ends_with("DTO")>${entity? substring(0, entity? uncap_first? index_of("DTO"))}<#else>${entity? uncap_first}</#if>Service.selectByProperty(<#if entity?ends_with("DTO")>${entity? substring(0, entity? uncap_first? index_of("DTO"))}<#else>${entity? uncap_first}DTO</#if>.convert());
-        return Result.ok(PageResult.build(Objects.isNull(page) ? ConvertUtil.convertList(result) : page));
+        return ResponseResult.succ(
+            PageResult.build(
+                Objects.nonNull(page)
+                ? page
+                : ArrayUtil.isNotEmpty(result)
+                    ? ConvertUtil.convertList(result)
+                    : null
+            )
+        );
     }
 
     @GetMapping("{id}")

@@ -11,8 +11,8 @@
         <module name="async-programing" />
         <module name="tk-mybatis-app" />
         <module name="common" />
-        <module name="eureka" />
         <module name="tk-mybatis" />
+        <module name="eureka" />
         <module name="mybatis-plus" />
         <module name="mybatis-plus-app" />
         <module name="netty" />
@@ -25,12 +25,12 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Apache-Dubbo-Zookeeper" options="-parameters" />
-      <module name="Global-Utils" options="" />
+      <module name="Micro-Service" options="" />
       <module name="Spring-Cloud-Alibaba" options="" />
-      <module name="Spring-Cloud-Framwork" options="" />
       <module name="Spring-Cloud-Netflix" options="" />
       <module name="SpringCloud-Seed" options="" />
       <module name="async-programing" options="-parameters" />
+      <module name="basic" options="" />
       <module name="common" options="-parameters" />
       <module name="eureka" options="-parameters" />
       <module name="mybatis-plus" options="-parameters" />

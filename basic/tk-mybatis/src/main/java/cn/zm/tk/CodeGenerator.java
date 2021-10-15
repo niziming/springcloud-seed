@@ -22,7 +22,7 @@ import java.util.Scanner;
 /** 功能描述: <br>
  * <演示例子，执行 main 方法控制台输入模块表名回车自动生成对应项目目录中>
  *
- * @author 倪子铭
+ * @author 十渊
  * @date 2021/10/14 13:42
  * @return
  */
@@ -113,7 +113,7 @@ public class CodeGenerator {
         // GlobalConfig gc = new GlobalConfig();
         // String projectPath = System.getProperty("user.dir");
         gc.setOutputDir(projectPath + '/' + module + "/src/main/java");
-        gc.setAuthor("jermaine");
+        gc.setAuthor("十渊");
         gc.setOpen(false);
         gc.setSwagger2(true); //实体属性 Swagger2 注解
 
@@ -224,7 +224,7 @@ public class CodeGenerator {
     }
     private static void genDTO(String[] tables) {
         gc.setOutputDir(projectPath + '/' + module + "/src/main/java");
-        gc.setAuthor("jermaine");
+        gc.setAuthor("十渊");
         gc.setOpen(false);
         gc.setSwagger2(true); //实体属性 Swagger2 注解
         gc.setEntityName("%sDTO");
@@ -283,7 +283,7 @@ public class CodeGenerator {
     }
     private static void genVO(String[] tables) {
         gc.setOutputDir(projectPath + '/' + module + "/src/main/java");
-        gc.setAuthor("jermaine");
+        gc.setAuthor("十渊");
         gc.setOpen(false);
         gc.setSwagger2(true); //实体属性 Swagger2 注解
         gc.setEntityName("%sVO");

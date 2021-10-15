@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>Spring-Cloud-Framwork</artifactId>
+    <artifactId>Micro-Service</artifactId>
 
     <description>三大流派微服务架构顶级模块</description>
 

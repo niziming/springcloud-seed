@@ -3,6 +3,13 @@ package cn.zm.tk.utils;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/** 功能描述: <br>
+ * <转换工具>
+ *
+ * @author 倪子铭
+ * @date 2021/10/15 14:11
+ * @return
+ */
 public class ConvertUtil {
     /**
      * 获取 vo 分页数据

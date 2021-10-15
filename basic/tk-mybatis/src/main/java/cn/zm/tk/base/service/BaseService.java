@@ -123,7 +123,7 @@ public interface BaseService<T> {
      * @param recards
      * @return
      */
-    List<T> likeByProperty(T recards) throws IllegalAccessException;
+    List<T> likeByProperty(T recards);
 
 
 }

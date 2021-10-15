@@ -45,15 +45,6 @@ public class ${entity} implements Serializable {
 <#-- ----------  BEGIN 字段循环遍历  ---------->
 <#list table.fields as field>
     <#if field.keyFlag>
-    <#assign keyPropertyName="${field.propertyName}"/>
-    </#if>
-    <#if field.comment!?length gt 0>
-    <#if swagger2>
-    @ApiModelProperty(value = "${field.comment}")
-    <#else>
-    </#if>
-    </#if>
-    <#if field.keyFlag>
     <#-- 主键 -->
     <#if field.keyIdentityFlag>
     @Id
@@ -64,6 +55,16 @@ public class ${entity} implements Serializable {
     <#elseif field.convert>
     @Id
     @GeneratedValue(generator = "JDBC")
+    </#if>
+    <#-- swagger字段 -->
+    <#if field.keyFlag>
+    <#assign keyPropertyName="${field.propertyName}"/>
+    </#if>
+    <#if field.comment!?length gt 0>
+    <#if swagger2>
+    @ApiModelProperty(value = "${field.comment}")
+    <#else>
+    </#if>
     </#if>
     <#-- 普通字段 -->
     <#elseif field.fill??>
