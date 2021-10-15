@@ -19,7 +19,13 @@ import java.util.List;
 import java.util.Properties;
 import java.util.Scanner;
 
-// 演示例子，执行 main 方法控制台输入模块表名回车自动生成对应项目目录中
+/** 功能描述: <br>
+ * <演示例子，执行 main 方法控制台输入模块表名回车自动生成对应项目目录中>
+ *
+ * @author 倪子铭
+ * @date 2021/10/14 13:42
+ * @return
+ */
 public class CodeGenerator {
     private static YamlPropertiesFactoryBean factoryBean = new YamlPropertiesFactoryBean();;
     private static Properties object;

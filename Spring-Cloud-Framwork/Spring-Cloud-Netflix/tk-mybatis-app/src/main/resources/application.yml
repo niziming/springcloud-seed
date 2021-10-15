@@ -1,10 +1,10 @@
 server:
-  port: 8702
+  port: 8703
 spring:
   profiles:
     active: common, tk
   application:
-    name: netflix-tkmybatis-app
+    name: netflix-tkmybatis-app-8703
 
 logging:
   level:

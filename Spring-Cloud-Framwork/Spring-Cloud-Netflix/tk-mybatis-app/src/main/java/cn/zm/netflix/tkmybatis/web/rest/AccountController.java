@@ -34,8 +34,11 @@ import java.util.List;
 @RestController
 @Api(tags = "接口")
 public class AccountController extends BaseController {
-    @Resource
+    @Autowired
+    @Qualifier("accountServiceImpl")
+    // @Resource
     private IAccountService accountService;
+
     @Resource
     private AccountMapper accountMapper;
 
@@ -50,10 +53,7 @@ public class AccountController extends BaseController {
     public ResponseResult<PageBean<AccountVO>> page(@Validated AccountDTO accountDTO) {
         // TODO 分页查询
         Page<AccountVO> page = getPage();
-        Account convert = accountDTO.convert();
-        List<Account> accounts = accountService.selectAll();
-        accountService.selectByProperty(convert);
-        // accountService.selectByProperty(accountDTO.convert());
+        accountService.selectByProperty(accountDTO.convert());
         return ResponseResult.succ(new PageBean(page));
     }
 
