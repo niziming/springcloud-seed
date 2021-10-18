@@ -1,10 +1,10 @@
 server:
-  port: 8702
+  port: 8703
 spring:
   profiles:
-    active: common, plus
+    active: common
   application:
-    name: netflix-mybatisplus-app-ribbon-8702
+    name: ribbon-8704
 
 logging:
   level:

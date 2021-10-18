@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>mybatis-plus-app-ribbon</artifactId>
+    <artifactId>ribbon</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -17,16 +17,22 @@
     </properties>
 
     <dependencies>
+        <!--统一依赖-->
+        <dependency>
+            <groupId>cn.zm</groupId>
+            <artifactId>common</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.alibaba</groupId>
+                    <artifactId>druid-spring-boot-starter</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
         <!--ribbon 负载均衡依赖客户端集成-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
-        </dependency>
-
-        <!--mybatis-plus-->
-        <dependency>
-            <groupId>cn.zm</groupId>
-            <artifactId>mybatis-plus</artifactId>
         </dependency>
 
         <!--eureka client-->
@@ -41,6 +47,5 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
         </dependency>
     </dependencies>
-
 
 </project>

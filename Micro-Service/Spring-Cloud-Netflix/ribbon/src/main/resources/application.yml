@@ -1,10 +1,10 @@
 server:
-  port: 8701
+  port: 8703
 spring:
   profiles:
-    active: common, plus
+    active: common
   application:
-    name: service-app
+    name: ribbon-8704
 
 logging:
   level:

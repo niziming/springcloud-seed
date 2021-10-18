@@ -11,6 +11,7 @@ import cn.zm.tk.utils.ConvertUtil;
 import cn.zm.tk.utils.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RestController;
 import cn.zm.tk.base.BaseController;
 import java.util.stream.Collectors;
@@ -39,6 +40,9 @@ public class AccountController extends BaseController {
     @Qualifier("accountServiceImpl")
     // @Resource
     private IAccountService accountService;
+
+    @Value("${server.port}")
+    private String port;
 
     @Resource
     private AccountMapper accountMapper;
@@ -90,5 +94,12 @@ public class AccountController extends BaseController {
         // TODO 修改
         accountService.updateSelectiveById(accountDTO.convert());
         return ResponseResult.succ("修改成功");
+    }
+
+    @GetMapping("ribbon/service")
+    @ApiOperation("负载均衡测试")
+    public ResponseResult ribbonService() {
+        // TODO 负载均衡测试
+        return ResponseResult.succ("tkapp:"+port);
     }
 }

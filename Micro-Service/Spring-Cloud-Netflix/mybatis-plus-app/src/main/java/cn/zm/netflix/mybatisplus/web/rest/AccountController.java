@@ -4,6 +4,7 @@ import cn.zm.common.base.ResponseResult;
 import cn.zm.netflix.mybatisplus.web.entity.dto.AccountDTO;
 import cn.zm.netflix.mybatisplus.web.entity.vo.AccountVO;
 import cn.zm.netflix.mybatisplus.web.service.IAccountService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RestController;
 import cn.zm.plus.base.BaseController;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -14,6 +15,9 @@ import io.swagger.annotations.Api;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
+import javax.management.MalformedObjectNameException;
+import javax.management.ObjectName;
+import java.lang.management.ManagementFactory;
 import java.util.Objects;
 
 /**
@@ -28,6 +32,9 @@ public class AccountController extends BaseController {
 
     @Resource
     private IAccountService accountService;
+
+    @Value("${server.port}")
+    private String port;
 
     @GetMapping
     @ApiOperation("查询")
@@ -74,4 +81,13 @@ public class AccountController extends BaseController {
         accountService.updateById(account.convert());
         return ResponseResult.succ("修改成功");
     }
+
+    @GetMapping("ribbon/service")
+    @ApiOperation("负载均衡测试")
+    public ResponseResult ribbonService() {
+        // TODO 负载均衡测试
+        return ResponseResult.succ("mybatis-plus-app:"+port);
+    }
+
+
 }

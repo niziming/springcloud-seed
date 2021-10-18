@@ -10,7 +10,7 @@
 
     <groupId>cn.zm</groupId>
     <artifactId>eureka</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
     <name>eureka</name>
 
     <description>eureka</description>

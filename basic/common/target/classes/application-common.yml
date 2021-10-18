@@ -47,3 +47,6 @@ spring:
           config:
             delete-allow: false
             drop-table-allow: false
+knife4j:
+  basic:
+    enable: true

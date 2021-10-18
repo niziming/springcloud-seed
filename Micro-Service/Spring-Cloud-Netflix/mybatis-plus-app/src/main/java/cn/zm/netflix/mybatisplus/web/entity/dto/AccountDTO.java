@@ -1,5 +1,6 @@
 package cn.zm.netflix.mybatisplus.web.entity.dto;
 
+import cn.zm.netflix.mybatisplus.web.entity.Account;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -8,7 +9,6 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.experimental.Accessors;
-import cn.zm.netflix.mybatisplus.web.entity.Account;
 
 @Data
 @Accessors(chain = true)
