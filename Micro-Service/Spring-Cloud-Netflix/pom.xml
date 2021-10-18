@@ -16,6 +16,7 @@
     <modules>
         <module>eureka</module>
         <module>mybatis-plus-app</module>
+        <module>mybatis-plus-app-ribbon</module>
         <module>tk-mybatis-app</module>
     </modules>
 
@@ -31,6 +32,7 @@
 
     <dependencyManagement>
         <dependencies>
+
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>

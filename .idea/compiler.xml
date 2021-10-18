@@ -13,6 +13,7 @@
         <module name="common" />
         <module name="tk-mybatis" />
         <module name="eureka" />
+        <module name="mybatis-plus-app-ribbon" />
         <module name="mybatis-plus" />
         <module name="mybatis-plus-app" />
         <module name="netty" />
@@ -35,6 +36,7 @@
       <module name="eureka" options="-parameters" />
       <module name="mybatis-plus" options="-parameters" />
       <module name="mybatis-plus-app" options="-parameters" />
+      <module name="mybatis-plus-app-ribbon" options="-parameters" />
       <module name="netty" options="-parameters" />
       <module name="tk-mybatis" options="-parameters" />
       <module name="tk-mybatis-app" options="-parameters" />

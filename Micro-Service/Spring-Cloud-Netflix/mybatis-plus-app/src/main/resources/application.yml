@@ -1,10 +1,10 @@
 server:
-  port: 8702
+  port: 8701
 spring:
   profiles:
     active: common, plus
   application:
-    name: netflix-mybatisplus-app-8702
+    name: netflix-mybatisplus-app-8701
 
 logging:
   level:
