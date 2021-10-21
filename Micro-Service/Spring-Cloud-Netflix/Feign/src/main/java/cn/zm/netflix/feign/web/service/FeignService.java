@@ -5,6 +5,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @FeignClient("SERVICE-APP")
 public interface FeignService {
-    @GetMapping("ribbon/service")
+    @GetMapping("/account/ribbon/service")
     String testFeign();
 }

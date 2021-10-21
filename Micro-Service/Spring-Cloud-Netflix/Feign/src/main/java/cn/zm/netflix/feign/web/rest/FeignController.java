@@ -2,6 +2,7 @@ package cn.zm.netflix.feign.web.rest;
 
 import cn.zm.common.base.ResponseResult;
 import cn.zm.netflix.feign.web.service.FeignService;
+import com.alibaba.fastjson.JSON;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,7 +26,7 @@ public class FeignController {
     @GetMapping
     @ApiOperation("查询测试")
     public ResponseResult get() {
-        return ResponseResult.succ(feignService.testFeign());
+        return ResponseResult.succ(JSON.parseObject(feignService.testFeign()));
     }
 
 }
