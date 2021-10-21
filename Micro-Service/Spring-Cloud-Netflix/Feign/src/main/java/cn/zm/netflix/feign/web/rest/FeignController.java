@@ -1,12 +1,12 @@
-package zm.netflix.feign.web.rest;
+package cn.zm.netflix.feign.web.rest;
 
 import cn.zm.common.base.ResponseResult;
+import cn.zm.netflix.feign.web.service.FeignService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import zm.netflix.feign.web.service.FeignService;
 
 import javax.annotation.Resource;
 
@@ -25,7 +25,7 @@ public class FeignController {
     @GetMapping
     @ApiOperation("查询测试")
     public ResponseResult get() {
-        return ResponseResult.succ(feignService.consume());
+        return ResponseResult.succ(feignService.testFeign());
     }
 
 }

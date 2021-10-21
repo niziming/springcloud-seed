@@ -1,10 +1,10 @@
 server:
-  port: 8703
+  port: 8704
 spring:
   profiles:
     active: common
   application:
-    name: ribbon-8703
+    name: feign-8704
 
 logging:
   level:

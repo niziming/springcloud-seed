@@ -38,4 +38,7 @@ public class ResponseResult<T> {
     public static <T> ResponseResult<T> succ(T data){
         return new ResponseResult<>(ResultEnum.SUCCESS, data);
     }
+    public static <T> ResponseResult<T> succ(){
+        return new ResponseResult<>(ResultEnum.SUCCESS, null);
+    }
 }

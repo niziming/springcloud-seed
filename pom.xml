@@ -36,6 +36,7 @@
 
     <dependencyManagement>
         <dependencies>
+
             <!-- spring-boot -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -49,16 +50,19 @@
                 <artifactId>common</artifactId>
                 <version>${base.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>cn.zm</groupId>
                 <artifactId>mybatis-plus</artifactId>
                 <version>${base.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>cn.zm</groupId>
                 <artifactId>tk-mybatis</artifactId>
                 <version>${base.version}</version>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 
