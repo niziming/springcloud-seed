@@ -11,12 +11,13 @@
         <module name="async-programing" />
         <module name="tk-mybatis-app" />
         <module name="common" />
+        <module name="Ribbon" />
         <module name="tk-mybatis" />
-        <module name="eureka" />
-        <module name="ribbon" />
         <module name="Feign" />
+        <module name="Hystrix" />
         <module name="mybatis-plus" />
         <module name="mybatis-plus-app" />
+        <module name="Eureka" />
         <module name="netty" />
       </profile>
     </annotationProcessing>
@@ -24,14 +25,15 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Apache-Dubbo-Zookeeper" options="-parameters" />
+      <module name="Eureka" options="-parameters" />
       <module name="Feign" options="-parameters" />
+      <module name="Hystrix" options="-parameters" />
+      <module name="Ribbon" options="-parameters" />
       <module name="async-programing" options="-parameters" />
       <module name="common" options="-parameters" />
-      <module name="eureka" options="-parameters" />
       <module name="mybatis-plus" options="-parameters" />
       <module name="mybatis-plus-app" options="-parameters" />
       <module name="netty" options="-parameters" />
-      <module name="ribbon" options="-parameters" />
       <module name="tk-mybatis" options="-parameters" />
       <module name="tk-mybatis-app" options="-parameters" />
     </option>

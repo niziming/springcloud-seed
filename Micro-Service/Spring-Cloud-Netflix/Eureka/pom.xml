@@ -13,7 +13,7 @@
     <version>1.0-SNAPSHOT</version>
     <name>eureka</name>
 
-    <description>eureka</description>
+    <description>Eureka</description>
 
     <properties>
         <java.version>1.8</java.version>

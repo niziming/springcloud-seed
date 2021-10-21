@@ -16,9 +16,9 @@ import javax.annotation.Resource;
  * @author 十渊
  * @since 2021-10-12
  */
-@RequestMapping("feign")
 @RestController
-@Api(tags = "feign")
+@RequestMapping("feign")
+@Api(tags = "feign测试接口")
 public class FeignController {
     @Resource
     FeignService feignService;

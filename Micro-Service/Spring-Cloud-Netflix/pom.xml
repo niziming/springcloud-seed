@@ -14,11 +14,12 @@
     <description>Spring Cloud Netflix解决方案</description>
 
     <modules>
-        <module>eureka</module>
+        <module>Eureka</module>
         <module>mybatis-plus-app</module>
-        <module>ribbon</module>
+        <module>Ribbon</module>
         <module>tk-mybatis-app</module>
         <module>Feign</module>
+        <module>Hystrix</module>
     </modules>
 
     <packaging>pom</packaging>
