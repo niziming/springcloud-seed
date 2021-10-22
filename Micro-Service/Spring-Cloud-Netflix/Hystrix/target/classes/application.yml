@@ -1,0 +1,24 @@
+server:
+  port: 8705
+spring:
+  profiles:
+    active: common
+  application:
+    name: Hystrix-8705
+
+logging:
+  level:
+    cn.zm: debug
+
+# eureka
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8700/eureka/
+
+#hystrix dashbroad
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
