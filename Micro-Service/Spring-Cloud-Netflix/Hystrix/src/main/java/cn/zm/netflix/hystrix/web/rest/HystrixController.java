@@ -16,9 +16,9 @@ import javax.annotation.Resource;
  * @author 十渊
  * @since 2021-10-12
  */
-@RequestMapping("hystix")
+@RequestMapping("hystrix/test")
 @RestController
-@Api(tags = "Hystix-熔断测试接口")
+@Api(tags = "Hystrix-熔断测试接口")
 public class HystrixController {
     @Resource
     HystrixService ribbonService;

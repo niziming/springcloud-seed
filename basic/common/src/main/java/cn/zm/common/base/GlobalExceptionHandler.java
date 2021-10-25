@@ -36,7 +36,7 @@ public class GlobalExceptionHandler {
 		} else if (e instanceof IllegalArgumentException){
 			r = ResponseResult.fail(e.getMessage());
 		} else {
-			r = ResponseResult.fail(null);
+			r = ResponseResult.fail(e.getMessage());
 		}
 		return r;
 	}
@@ -57,7 +57,7 @@ public class GlobalExceptionHandler {
 		return ResponseResult.fail(ResultEnum.INVALID_PARAMS.getMsg());
 	}
 	
-	private String getMessage(Exception e) {
+	public String getMessage(Exception e) {
 		StringWriter sw = new StringWriter();
 		try (PrintWriter pw = new PrintWriter(sw)) {
 			pw.flush();

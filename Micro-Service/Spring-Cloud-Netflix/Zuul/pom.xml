@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>Hystrix</artifactId>
+    <artifactId>Zuul</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -29,21 +29,10 @@
             </exclusions>
         </dependency>
 
-        <!--hystrix 熔断-->
+        <!--zuul 依赖-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
-        </dependency>
-
-        <!--actuator-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <!--hystrix-dashboard-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
         </dependency>
 
         <!-- eureka client 此包已包含 spring-cloud-netflix-hystrix -->

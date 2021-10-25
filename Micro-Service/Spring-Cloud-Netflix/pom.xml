@@ -20,6 +20,7 @@
         <module>tk-mybatis-app</module>
         <module>Feign</module>
         <module>Hystrix</module>
+        <module>Zuul</module>
     </modules>
 
     <packaging>pom</packaging>

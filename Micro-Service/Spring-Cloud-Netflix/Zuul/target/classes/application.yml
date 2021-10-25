@@ -1,0 +1,25 @@
+server:
+  port: 8706
+spring:
+  profiles:
+    active: common
+  application:
+    name: Zuul-8706
+
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: ribbon-8703
+    api-b:
+      path: /api-b/**
+      serviceId: service-app
+
+# eureka
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8700/eureka/
+logging:
+  level:
+    cn.zm: debug

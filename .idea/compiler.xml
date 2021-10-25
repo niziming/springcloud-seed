@@ -9,14 +9,15 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Apache-Dubbo-Zookeeper" />
         <module name="async-programing" />
+        <module name="Hystrix" />
+        <module name="mybatis-plus-app" />
         <module name="tk-mybatis-app" />
         <module name="common" />
         <module name="Ribbon" />
         <module name="tk-mybatis" />
         <module name="Feign" />
-        <module name="Hystrix" />
+        <module name="Zuul" />
         <module name="mybatis-plus" />
-        <module name="mybatis-plus-app" />
         <module name="Eureka" />
         <module name="netty" />
       </profile>
@@ -29,6 +30,7 @@
       <module name="Feign" options="-parameters" />
       <module name="Hystrix" options="-parameters" />
       <module name="Ribbon" options="-parameters" />
+      <module name="Zuul" options="-parameters" />
       <module name="async-programing" options="-parameters" />
       <module name="common" options="-parameters" />
       <module name="mybatis-plus" options="-parameters" />

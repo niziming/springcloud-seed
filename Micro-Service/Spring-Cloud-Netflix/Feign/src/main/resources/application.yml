@@ -5,6 +5,9 @@ spring:
     active: common
   application:
     name: feign-8704
+  main:
+    #允许存在多个Feign调用相同Service的接口
+    allow-bean-definition-overriding: true
 
 logging:
   level:
@@ -15,3 +18,8 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8700/eureka/
+
+# Feign是自带断路器的,以下配置开启熔断器
+feign:
+  hystrix:
+    enabled: true
