@@ -21,7 +21,7 @@
         <druid.version>1.1.22</druid.version>
         <!--<lombok.version>1.18.16</lombok.version>-->
         <hutool.version>5.3.10</hutool.version>
-        <knife4j.version>2.0.7</knife4j.version>
+        <knife4j.version>2.0.8</knife4j.version>
         <fastjson.version>1.2.58</fastjson.version>
     </properties>
 
@@ -81,14 +81,15 @@
         </dependency>
 
         <!-- knife4j -->
-        <!--微服务-->
-        <!--<dependency>-->
-        <!--    <groupId>com.github.xiaoymin</groupId>-->
-        <!--    <artifactId>knife4j-micro-spring-boot-starter</artifactId>-->
-        <!--    <version>${knife4j.version}</version>-->
-        <!--</dependency>-->
+        <!--在Spring Cloud的微服务架构下,每个微服务其实并不需要引入前端的Ui资源
+        ,因此在每个微服务的Spring Boot项目下,引入knife4j提供的微服务starter-->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-micro-spring-boot-starter</artifactId>
+            <version>${knife4j.version}</version>
+        </dependency>
 
-        <!--knife4j-->
+        <!--在网关聚合文档服务下,可以再把前端的ui资源引入-->
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>knife4j-spring-boot-starter</artifactId>

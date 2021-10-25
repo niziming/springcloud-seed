@@ -80,16 +80,18 @@ public class ZuulAppFilter extends ZuulFilter {
      */
     @Override
     public Object run() throws ZuulException {
-        RequestContext ctx = RequestContext.getCurrentContext();
-        HttpServletRequest request = ctx.getRequest();
-        HttpServletResponse response = ctx.getResponse();
-        log.info(String.format("%s >>> %s", request.getMethod(), request.getRequestURL().toString()));
-        Object accessToken = request.getParameter("token");
-        try {
-            Assert.notNull(accessToken, "token is empty 401 err");
-        } catch (Exception e) {
-            resolver.resolveException(request, response, null, e);
-        }
+        // 过滤处理的部分
+        // RequestContext ctx = RequestContext.getCurrentContext();
+        // HttpServletRequest request = ctx.getRequest();
+        // HttpServletResponse response = ctx.getResponse();
+        // log.info(String.format("%s >>> %s", request.getMethod(), request.getRequestURL().toString()));
+        // Object accessToken = request.getParameter("token");
+        // try {
+        //     Assert.notNull(accessToken, "token is empty 401 err");
+        // } catch (Exception e) {
+        //     resolver.resolveException(request, response, null, e);
+        // }
+
         // if(accessToken == null) {
         //     log.warn("token is empty");
         //     ctx.setSendZuulResponse(false);
@@ -100,7 +102,6 @@ public class ZuulAppFilter extends ZuulFilter {
         //
         //     return null;
         // }
-        log.info("ok");
         return null;
     }
 }
