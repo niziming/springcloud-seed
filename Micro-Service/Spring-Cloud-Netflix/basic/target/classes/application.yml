@@ -1,0 +1,17 @@
+server:
+  port: 8707
+spring:
+  profiles:
+    active: common
+  application:
+    name: config-8707
+
+logging:
+  level:
+    cn.zm: debug
+
+# eureka
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8700/eureka/

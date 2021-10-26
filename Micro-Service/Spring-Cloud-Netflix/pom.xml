@@ -21,6 +21,7 @@
         <module>Feign</module>
         <module>Hystrix</module>
         <module>Zuul</module>
+        <module>Config</module>
     </modules>
 
     <packaging>pom</packaging>
