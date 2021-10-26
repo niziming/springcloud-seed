@@ -8,4 +8,4 @@ spring:
     config:
       uri: http://localhost:8707/
       label: main
-      profile: plus
+      profile: common, plus
