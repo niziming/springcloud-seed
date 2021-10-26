@@ -8,11 +8,21 @@ import org.springframework.stereotype.Component;
 import java.util.Map;
 
 /**
- * @author ASUS
+ * @author 十渊
  */
 @Component
 @Data
-@ConfigurationProperties(prefix = "config")
+@ConfigurationProperties(prefix = "global")
 public class GlobalConfig {
+    private Map<String, JSONObject> config;
     private Map<String, JSONObject> netty;
 }
+// /**
+//  * @author 十渊
+//  */
+// @Component
+// @Data
+// @ConfigurationProperties(prefix = "config")
+// public class GlobalConfig {
+//     private Map<String, JSONObject> netty;
+// }

@@ -22,6 +22,7 @@
         <module>Hystrix</module>
         <module>Zuul</module>
         <module>Config</module>
+        <module>Bus</module>
     </modules>
 
     <packaging>pom</packaging>

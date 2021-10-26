@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Apache-Dubbo-Zookeeper" />
         <module name="async-programing" />
+        <module name="Bus" />
         <module name="Config" />
         <module name="Hystrix" />
         <module name="mybatis-plus-app" />
@@ -27,6 +28,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Apache-Dubbo-Zookeeper" options="-parameters" />
+      <module name="Bus" options="-parameters" />
       <module name="Config" options="-parameters" />
       <module name="Eureka" options="-parameters" />
       <module name="Feign" options="-parameters" />

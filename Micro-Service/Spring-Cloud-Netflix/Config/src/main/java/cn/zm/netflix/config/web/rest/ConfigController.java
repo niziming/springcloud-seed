@@ -1,4 +1,4 @@
-package cn.zm.netflix.feign.web.rest;
+package cn.zm.netflix.config.web.rest;
 
 import cn.zm.common.base.ResponseResult;
 import io.swagger.annotations.Api;

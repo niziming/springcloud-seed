@@ -1,11 +1,22 @@
 server:
   port: 8701
+# eureka
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8700/eureka/
+global:
+  config:
+    foo:
+      bar: hello world
+  netty:
+    foo:
+      bar: hello world
 spring:
-#  application:
-#    name: service-app
-#  profiles: plus
+  application:
+    name: service-app
   cloud:
     config:
       uri: http://localhost:8707/
       label: main
-      profile: plus
+      profile: common, plus

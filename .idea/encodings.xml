@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/Micro-Service/Apache-Dubbo-Zookeeper/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Micro-Service/Spring-Cloud-Netflix/Bus/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Micro-Service/Spring-Cloud-Netflix/Config/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Micro-Service/Spring-Cloud-Netflix/Eureka/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Micro-Service/Spring-Cloud-Netflix/Feign/src/main/java" charset="UTF-8" />
@@ -9,6 +10,7 @@
     <file url="file://$PROJECT_DIR$/Micro-Service/Spring-Cloud-Netflix/Ribbon/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Micro-Service/Spring-Cloud-Netflix/Zuul/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Micro-Service/Spring-Cloud-Netflix/mybatis-plus-app/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Micro-Service/Spring-Cloud-Netflix/mybatis-plus-app/src/main/resources/bootstrap.yml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Micro-Service/Spring-Cloud-Netflix/tk-mybatis-app/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/basic/async-programing/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/basic/common/src/main/java" charset="UTF-8" />
