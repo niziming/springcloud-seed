@@ -15,3 +15,11 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8700/eureka/
+management:
+  endpoint:
+    shutdown:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"

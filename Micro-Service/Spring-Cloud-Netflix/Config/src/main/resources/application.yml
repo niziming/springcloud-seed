@@ -15,9 +15,10 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/niziming/SpringCloud-Seed
+          uri: https://gitee.com/niziming/SpringCloud-Seed.git
           search-paths: config-repo
-      label: master
+          force-pull: true
+        default-label: main
 
 logging:
   level:
