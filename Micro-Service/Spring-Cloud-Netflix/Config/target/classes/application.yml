@@ -15,8 +15,8 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/niziming/SpringCloud-Seed.git
-#          search-paths: assets
+          uri: https://github.com/niziming/SpringCloud-Seed
+          search-paths: config-repo
       label: master
 
 logging:
