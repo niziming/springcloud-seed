@@ -2,7 +2,6 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -11,8 +10,10 @@
         <module name="async-programing" />
         <module name="Bus" />
         <module name="Config" />
+        <module name="eureka" />
         <module name="Hystrix" />
         <module name="mybatis-plus-app" />
+        <module name="RabittMQ" />
         <module name="tk-mybatis-app" />
         <module name="common" />
         <module name="Ribbon" />
@@ -20,7 +21,6 @@
         <module name="Feign" />
         <module name="Zuul" />
         <module name="mybatis-plus" />
-        <module name="Eureka" />
         <module name="netty" />
       </profile>
     </annotationProcessing>
@@ -30,13 +30,14 @@
       <module name="Apache-Dubbo-Zookeeper" options="-parameters" />
       <module name="Bus" options="-parameters" />
       <module name="Config" options="-parameters" />
-      <module name="Eureka" options="-parameters" />
       <module name="Feign" options="-parameters" />
       <module name="Hystrix" options="-parameters" />
+      <module name="RabittMQ" options="-parameters" />
       <module name="Ribbon" options="-parameters" />
       <module name="Zuul" options="-parameters" />
       <module name="async-programing" options="-parameters" />
       <module name="common" options="-parameters" />
+      <module name="eureka" options="-parameters" />
       <module name="mybatis-plus" options="-parameters" />
       <module name="mybatis-plus-app" options="-parameters" />
       <module name="netty" options="-parameters" />
