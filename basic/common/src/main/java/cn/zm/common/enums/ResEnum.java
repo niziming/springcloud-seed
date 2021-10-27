@@ -8,6 +8,7 @@ package cn.zm.common.enums;
  * @return
  */
 public enum ResEnum {
+	// 请求错误
 	FAIL(1000, "请求错误"),
 	CHECK_FAIL(1001, "验证失败"),
 	BUSINESS_FAIL(1002, "网络异常"),
