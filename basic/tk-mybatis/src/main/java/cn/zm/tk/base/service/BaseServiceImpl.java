@@ -1,8 +1,7 @@
 package cn.zm.tk.base.service;
 
-import cn.zm.common.base.GlobalExceptionHandler;
 import cn.zm.common.base.ServiceException;
-import cn.zm.common.enums.ResultEnum;
+import cn.zm.common.enums.ResEnum;
 import cn.zm.tk.anno.Like;
 import cn.zm.tk.func.ListFunc;
 import cn.zm.tk.base.mapper.BaseMapper;
@@ -186,7 +185,7 @@ public abstract class BaseServiceImpl<T> implements BaseService<T> {
                 }
             }
         } catch (IllegalAccessException e) {
-            throw ServiceException.serviceException(ResultEnum.SERVER_ERR, e).build();
+            throw ServiceException.serviceException(ResEnum.SERVER_ERR, e).build();
         }
         return mapper.selectByExample(example);
     }

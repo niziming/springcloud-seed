@@ -2,8 +2,7 @@ package cn.zm.common.base;
 
 
 import cn.hutool.core.util.StrUtil;
-import cn.zm.common.base.ServiceExceptionBuilder;
-import cn.zm.common.enums.ResultEnum;
+import cn.zm.common.enums.ResEnum;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Objects;
@@ -32,15 +31,15 @@ public class ServiceException extends RuntimeException {
     }
 
     public ServiceException(String message, Throwable cause) {
-        this(ResultEnum.BUSINESS_FAIL.getCode(), message, cause);
+        this(ResEnum.BUSINESS_FAIL.getCode(), message, cause);
     }
 
     public ServiceException(String message) {
-        this(ResultEnum.BUSINESS_FAIL.getCode(), message);
+        this(ResEnum.BUSINESS_FAIL.getCode(), message);
     }
 
     public ServiceException(String alertMessage, String message, Throwable cause) {
-        this(ResultEnum.BUSINESS_FAIL.getCode(), message, cause);
+        this(ResEnum.BUSINESS_FAIL.getCode(), message, cause);
         this.alertMessage = alertMessage;
     }
 
@@ -88,7 +87,7 @@ public class ServiceException extends RuntimeException {
      * @param cause                原始异常
      * @return 业务异常构造器
      */
-    public static ServiceExceptionBuilder serviceException(ResultEnum serviceExceptionEnum, Throwable cause) {
+    public static ServiceExceptionBuilder serviceException(ResEnum serviceExceptionEnum, Throwable cause) {
         if (Objects.isNull(serviceExceptionEnum)) {
             throw new RuntimeException("enum of service exception can not be null");
         }

@@ -1,7 +1,7 @@
 package cn.zm.netty.contoller;
 
 import cn.zm.common.base.ResResult;
-import cn.zm.common.enums.ResultEnum;
+import cn.zm.common.enums.ResEnum;
 import cn.zm.netty.entity.WebSocketEntity;
 import cn.zm.netty.handler.NettyHandler;
 import cn.zm.netty.service.PushService;
@@ -46,7 +46,7 @@ public class PushController {
         // String enums = "DATA_EXCEPTION";
         // ResultEnum resultEnum = JSONObject.parseObject(enums).toJavaObject(ResultEnum.class);
         // System.out.println("resultEnum = " + resultEnum);
-        return ResResult.succ(ResultEnum.DATA_EXCEPTION);
+        return ResResult.succ(ResEnum.DATA_EXCEPTION);
     }
     /**
      * 推送给指定用户

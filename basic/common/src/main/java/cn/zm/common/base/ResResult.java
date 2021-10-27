@@ -1,12 +1,14 @@
 package cn.zm.common.base;
 
-import cn.zm.common.enums.ResultEnum;
+import cn.zm.common.enums.ResEnum;
 import lombok.Data;
 
-/**
- * @author Mr_W
- * @date 2021/2/16 13:48
- * @description 封装返回值
+/** 功能描述: <br>
+ * <统一返回类>
+ *
+ * @author 十渊
+ * @date 2021/10/27 17:27
+ * @return
  */
 @Data
 public class ResResult<T> {
@@ -18,9 +20,9 @@ public class ResResult<T> {
     private ResResult(){
     }
 
-    private ResResult(ResultEnum resultEnum, T data){
-        this.code = resultEnum.getCode();
-        this.msg = resultEnum.getMsg();
+    private ResResult(ResEnum resEnum, T data){
+        this.code = resEnum.getCode();
+        this.msg = resEnum.getMsg();
         this.data = data;
     }
 
@@ -31,14 +33,14 @@ public class ResResult<T> {
     }
 
     public static <T> ResResult<T> fail(T data){
-        return new ResResult<>(ResultEnum.FAIL, data);
+        return new ResResult<>(ResEnum.FAIL, data);
 
     }
 
     public static <T> ResResult<T> succ(T data){
-        return new ResResult<>(ResultEnum.SUCCESS, data);
+        return new ResResult<>(ResEnum.SUCCESS, data);
     }
     public static <T> ResResult<T> succ(){
-        return new ResResult<>(ResultEnum.SUCCESS, null);
+        return new ResResult<>(ResEnum.SUCCESS, null);
     }
 }

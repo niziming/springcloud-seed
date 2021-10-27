@@ -1,13 +1,13 @@
 package cn.zm.common.enums;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-
-/**
- * @author Mr_W
+/** 功能描述: <br>
+ * <统一枚举>
+ *
+ * @author 十渊
+ * @date 2021/10/27 17:28
+ * @return
  */
-
-public enum ResultEnum {
+public enum ResEnum {
 	FAIL(1000, "请求错误"),
 	CHECK_FAIL(1001, "验证失败"),
 	BUSINESS_FAIL(1002, "网络异常"),
@@ -21,11 +21,11 @@ public enum ResultEnum {
 	private String	msg;
 	private Object	data;
 
-	ResultEnum(int code) {
+	ResEnum(int code) {
 		this.code = code;
 	}
 
-	ResultEnum(int code, String msg) {
+	ResEnum(int code, String msg) {
 		this.code = code;
 		this.msg = msg;
 	}

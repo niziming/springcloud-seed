@@ -1,6 +1,6 @@
 package cn.zm.common.base;
 
-import cn.zm.common.enums.ResultEnum;
+import cn.zm.common.enums.ResEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.validation.BindException;
@@ -54,7 +54,7 @@ public class GlobalExceptionHandler {
                 return ResResult.fail(fieldError.getDefaultMessage());
             }
         }
-		return ResResult.fail(ResultEnum.INVALID_PARAMS.getMsg());
+		return ResResult.fail(ResEnum.INVALID_PARAMS.getMsg());
 	}
 	
 	public String getMessage(Exception e) {
