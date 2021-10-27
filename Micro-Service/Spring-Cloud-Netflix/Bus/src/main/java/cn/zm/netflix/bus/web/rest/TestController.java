@@ -1,6 +1,6 @@
 package cn.zm.netflix.bus.web.rest;
 
-import cn.zm.common.base.ResponseResult;
+import cn.zm.common.base.ResResult;
 import cn.zm.common.config.GlobalConfig;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -25,8 +25,8 @@ public class TestController {
 
     @GetMapping
     @ApiOperation("获取全局配置")
-    public ResponseResult getConfig() {
+    public ResResult getConfig() {
         // TODO 查询
-        return ResponseResult.succ(globalConfig);
+        return ResResult.succ(globalConfig);
     }
 }

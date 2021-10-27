@@ -1,6 +1,6 @@
 package cn.zm.netflix.zuul.web.rest;
 
-import cn.zm.common.base.ResponseResult;
+import cn.zm.common.base.ResResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ public class ZuulTestController {
 
     @ApiOperation("获取网关路由列表")
     @GetMapping
-    public ResponseResult<List<Route>> getRouters() {
-        return ResponseResult.succ(routeLocator.getRoutes());
+    public ResResult<List<Route>> getRouters() {
+        return ResResult.succ(routeLocator.getRoutes());
     }
 }

@@ -1,6 +1,6 @@
 package cn.zm.netty.contoller;
 
-import cn.zm.common.base.ResponseResult;
+import cn.zm.common.base.ResResult;
 import cn.zm.common.enums.ResultEnum;
 import cn.zm.netty.entity.WebSocketEntity;
 import cn.zm.netty.handler.NettyHandler;
@@ -29,9 +29,9 @@ public class PushController {
      * @param msg
      */
     @PostMapping("/pushAll")
-    public ResponseResult pushToAll(@RequestParam("msg") String msg){
+    public ResResult pushToAll(@RequestParam("msg") String msg){
         pushService.pushMsgToAll(msg);
-        return ResponseResult.succ("发送成功-" + msg);
+        return ResResult.succ("发送成功-" + msg);
     }
 
     /**
@@ -39,14 +39,14 @@ public class PushController {
      */
     @ApiOperation("枚举测试")
     @PostMapping("/enum")
-    public ResponseResult testEnum(String entity){
+    public ResResult testEnum(String entity){
         JSONObject jsonObject = JSONObject.parseObject(entity);
         WebSocketEntity webSocketEntity = jsonObject.toJavaObject(WebSocketEntity.class);
         System.out.println("webSocketEntity = " + webSocketEntity);
         // String enums = "DATA_EXCEPTION";
         // ResultEnum resultEnum = JSONObject.parseObject(enums).toJavaObject(ResultEnum.class);
         // System.out.println("resultEnum = " + resultEnum);
-        return ResponseResult.succ(ResultEnum.DATA_EXCEPTION);
+        return ResResult.succ(ResultEnum.DATA_EXCEPTION);
     }
     /**
      * 推送给指定用户
@@ -54,18 +54,18 @@ public class PushController {
      * @param msg
      */
     @PostMapping("/pushOne")
-    public ResponseResult pushMsgToOne(@RequestParam("userId") String userId,@RequestParam("msg") String msg){
+    public ResResult pushMsgToOne(@RequestParam("userId") String userId, @RequestParam("msg") String msg){
         pushService.pushMsgToOne(userId,msg);
-        return ResponseResult.succ("发送成功-id: " + userId + "-msg: " + msg);
+        return ResResult.succ("发送成功-id: " + userId + "-msg: " + msg);
     }
 
     /**
      * 推送给指定用户
      */
     @PostMapping("/clean")
-    public ResponseResult clean(){
+    public ResResult clean(){
         NettyHandler.getUserChannelMap().clear();
-        return ResponseResult.succ("清理成功");
+        return ResResult.succ("清理成功");
     }
 
 }

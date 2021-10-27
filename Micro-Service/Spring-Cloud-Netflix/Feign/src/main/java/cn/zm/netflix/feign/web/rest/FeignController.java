@@ -1,6 +1,6 @@
 package cn.zm.netflix.feign.web.rest;
 
-import cn.zm.common.base.ResponseResult;
+import cn.zm.common.base.ResResult;
 import cn.zm.netflix.feign.web.service.FeignHystrixService;
 import cn.zm.netflix.feign.web.service.FeignService;
 import com.alibaba.fastjson.JSON;
@@ -28,15 +28,15 @@ public class FeignController {
 
     @GetMapping
     @ApiOperation("feign查询测试")
-    public ResponseResult get() {
-        return ResponseResult.succ(JSON.parseObject(feignService.testFeign()));
+    public ResResult get() {
+        return ResResult.succ(JSON.parseObject(feignService.testFeign()));
     }
 
 
     @GetMapping("hystrix")
     @ApiOperation("feign-熔断器-查询测试")
-    public ResponseResult hystrix() {
-        return ResponseResult.succ(JSON.parseObject(feignHystrixService.testHystrix()));
+    public ResResult hystrix() {
+        return ResResult.succ(JSON.parseObject(feignHystrixService.testHystrix()));
     }
 
 }

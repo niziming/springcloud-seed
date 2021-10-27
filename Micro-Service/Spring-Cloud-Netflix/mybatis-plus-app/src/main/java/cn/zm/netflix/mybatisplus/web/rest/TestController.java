@@ -1,6 +1,6 @@
 package cn.zm.netflix.mybatisplus.web.rest;
 
-import cn.zm.common.base.ResponseResult;
+import cn.zm.common.base.ResResult;
 import cn.zm.common.config.GlobalConfig;
 import cn.zm.plus.base.BaseController;
 import io.swagger.annotations.Api;
@@ -23,8 +23,8 @@ public class TestController extends BaseController {
 
     @GetMapping
     @ApiOperation("获取全局配置")
-    public ResponseResult getConfig() {
+    public ResResult getConfig() {
         // TODO 查询
-        return ResponseResult.succ(globalConfig);
+        return ResResult.succ(globalConfig);
     }
 }

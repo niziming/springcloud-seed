@@ -1,6 +1,6 @@
 package cn.zm.netflix.hystrix.web.rest;
 
-import cn.zm.common.base.ResponseResult;
+import cn.zm.common.base.ResResult;
 import cn.zm.netflix.hystrix.web.service.HystrixService;
 import com.alibaba.fastjson.JSON;
 import io.swagger.annotations.Api;
@@ -25,8 +25,8 @@ public class HystrixController {
 
     @GetMapping
     @ApiOperation("查询测试")
-    public ResponseResult get() {
-        return ResponseResult.succ(JSON.parse(ribbonService.ribbonHystrix()));
+    public ResResult get() {
+        return ResResult.succ(JSON.parse(ribbonService.ribbonHystrix()));
     }
 
 }

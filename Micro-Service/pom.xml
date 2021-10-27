@@ -28,7 +28,7 @@
 
     <build>
         <plugins>
-            <!--boot应用 plugin-->
+            <!-- boot应用 plugin -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>

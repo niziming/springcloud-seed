@@ -1,6 +1,6 @@
 package cn.zm.netflix.ribbon.web.rest;
 
-import cn.zm.common.base.ResponseResult;
+import cn.zm.common.base.ResResult;
 import cn.zm.netflix.ribbon.web.service.RibbonService;
 import com.alibaba.fastjson.JSON;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,8 +24,8 @@ public class RibbonController {
 
     @GetMapping
     @ApiOperation("查询测试")
-    public ResponseResult get() {
-        return ResponseResult.succ(JSON.parse(ribbonService.consume()));
+    public ResResult get() {
+        return ResResult.succ(JSON.parse(ribbonService.consume()));
     }
 
 }

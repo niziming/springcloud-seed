@@ -1,7 +1,6 @@
 package cn.zm.netflix.tkmybatis.web.rest;
 
-import cn.hutool.core.util.ArrayUtil;
-import cn.zm.common.base.ResponseResult;
+import cn.zm.common.base.ResResult;
 import cn.zm.netflix.tkmybatis.web.entity.Account;
 import cn.zm.netflix.tkmybatis.web.entity.dto.AccountDTO;
 import cn.zm.netflix.tkmybatis.web.entity.vo.AccountVO;
@@ -55,51 +54,51 @@ public class AccountController extends BaseController {
         @ApiImplicitParam(name = "orderByColumn", value = "排序字段"),
         @ApiImplicitParam(name = "isDesc", value = "是否降序")
     })
-    public ResponseResult<PageResult<AccountVO>> page(@Validated AccountDTO accountDTO) {
+    public ResResult<PageResult<AccountVO>> page(@Validated AccountDTO accountDTO) {
         // TODO 分页查询
         Page<AccountVO> page = getPage();
         List<Account> accounts = accountService.likeByProperty(accountDTO.convert());
-        return ResponseResult.succ(
+        return ResResult.succ(
             PageResult.build(Objects.isNull(page) ? accounts : page)
         );
     }
 
     @GetMapping("{id}")
     @ApiOperation("查询(id)")
-    public ResponseResult<AccountVO> get(@PathVariable String id) {
+    public ResResult<AccountVO> get(@PathVariable String id) {
         // TODO 查询
-        return ResponseResult.succ(Objects.nonNull(accountService.selectById(id)) ? accountService.selectById(id).convert() : null);
+        return ResResult.succ(Objects.nonNull(accountService.selectById(id)) ? accountService.selectById(id).convert() : null);
     }
 
     @PostMapping
     @ApiOperation("新增(list)")
-    public ResponseResult add(@RequestBody @Validated List<AccountDTO> accountDTOs) {
+    public ResResult add(@RequestBody @Validated List<AccountDTO> accountDTOs) {
         // TODO 新增
         accountDTOs = accountDTOs.stream().map(c -> c.setId(null)).collect(Collectors.toList());
         accountService.saveBatch(ConvertUtil.convertList(accountDTOs));
-        return ResponseResult.succ("新增成功");
+        return ResResult.succ("新增成功");
     }
 
     @DeleteMapping("{id}")
     @ApiOperation("删除")
-    public ResponseResult del(@PathVariable String id) {
+    public ResResult del(@PathVariable String id) {
         // TODO 删除
         accountService.deleteById(id);
-        return ResponseResult.succ("删除成功");
+        return ResResult.succ("删除成功");
     }
 
     @PutMapping
     @ApiOperation("修改")
-    public ResponseResult update(@RequestBody @Validated AccountDTO accountDTO) {
+    public ResResult update(@RequestBody @Validated AccountDTO accountDTO) {
         // TODO 修改
         accountService.updateSelectiveById(accountDTO.convert());
-        return ResponseResult.succ("修改成功");
+        return ResResult.succ("修改成功");
     }
 
     @GetMapping("ribbon/service")
     @ApiOperation("负载均衡测试")
-    public ResponseResult ribbonService() {
+    public ResResult ribbonService() {
         // TODO 负载均衡测试
-        return ResponseResult.succ("tkapp:"+port);
+        return ResResult.succ("tkapp:"+port);
     }
 }

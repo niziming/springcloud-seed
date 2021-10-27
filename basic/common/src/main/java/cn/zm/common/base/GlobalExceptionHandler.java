@@ -24,25 +24,25 @@ import java.util.List;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 	@ExceptionHandler(value = Exception.class)
-	public ResponseResult internalErrorHandler(Exception e) {
+	public ResResult internalErrorHandler(Exception e) {
 		log.error("happened serviceException, Caused by " +
 				"\n\n ------------------------------------" +
 				"--------------ERROR INFO------------" +
 				"--------------------------------------"
 				+ getMessage(e), e);
-		ResponseResult r;
+		ResResult r;
 		if (e instanceof ServiceException) {
-			r = ResponseResult.fail(StringUtils.isBlank(((ServiceException) e).getAlertMessage()) ? e.getMessage() : ((ServiceException) e).getAlertMessage());
+			r = ResResult.fail(StringUtils.isBlank(((ServiceException) e).getAlertMessage()) ? e.getMessage() : ((ServiceException) e).getAlertMessage());
 		} else if (e instanceof IllegalArgumentException){
-			r = ResponseResult.fail(e.getMessage());
+			r = ResResult.fail(e.getMessage());
 		} else {
-			r = ResponseResult.fail(e.getMessage());
+			r = ResResult.fail(e.getMessage());
 		}
 		return r;
 	}
 	
 	@ExceptionHandler(value = MethodArgumentNotValidException.class)
-	public ResponseResult paramErrorHandler(MethodArgumentNotValidException e) {
+	public ResResult paramErrorHandler(MethodArgumentNotValidException e) {
 		BindingResult exceptions = e.getBindingResult();
         // 判断异常中是否有错误信息，如果存在就使用异常中的消息，否则使用默认消息
         if (exceptions.hasErrors()) {
@@ -51,10 +51,10 @@ public class GlobalExceptionHandler {
                 // 这里列出了全部错误参数，按正常逻辑，只需要第一条错误即可
                 FieldError fieldError = (FieldError) errors.get(0);
                 log.error("invalid parameter, Caused by " + fieldError.getDefaultMessage(), e);
-                return ResponseResult.fail(fieldError.getDefaultMessage());
+                return ResResult.fail(fieldError.getDefaultMessage());
             }
         }
-		return ResponseResult.fail(ResultEnum.INVALID_PARAMS.getMsg());
+		return ResResult.fail(ResultEnum.INVALID_PARAMS.getMsg());
 	}
 	
 	public String getMessage(Exception e) {
@@ -67,21 +67,21 @@ public class GlobalExceptionHandler {
 	}
 
 	@ExceptionHandler(MissingServletRequestParameterException.class)
-	public ResponseResult handlerMissingServletRequestParameterException(MissingServletRequestParameterException e) {
+	public ResResult handlerMissingServletRequestParameterException(MissingServletRequestParameterException e) {
 		log.debug(e.getParameterName() + "不能为空", e);
-		return ResponseResult.fail(e.getParameterName() + "不能为空");
+		return ResResult.fail(e.getParameterName() + "不能为空");
 	}
 
 	@ExceptionHandler(BindException.class)
-	public ResponseResult handlerBindException(BindException e) {
+	public ResResult handlerBindException(BindException e) {
 		log.debug(e.getAllErrors().get(0).getDefaultMessage(), e);
-		return ResponseResult.fail(e.getAllErrors().get(0).getDefaultMessage());
+		return ResResult.fail(e.getAllErrors().get(0).getDefaultMessage());
 	}
 
 	@ExceptionHandler(MultipartException.class)
-	public ResponseResult handleError1(MultipartException e) {
+	public ResResult handleError1(MultipartException e) {
 		log.error("文件解析失败", e);
-		return ResponseResult.fail("文件解析失败");
+		return ResResult.fail("文件解析失败");
 	}
 
 }

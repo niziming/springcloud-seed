@@ -1,7 +1,7 @@
 package cn.zm.async.rest;
 
 import cn.zm.async.service.CompositeService;
-import cn.zm.common.base.ResponseResult;
+import cn.zm.common.base.ResResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
@@ -24,8 +24,8 @@ public class AsycController {
 
     @GetMapping("search")
     @ApiOperation("搜索")
-    public ResponseResult searchList() throws InterruptedException, ExecutionException, TimeoutException {
+    public ResResult searchList() throws InterruptedException, ExecutionException, TimeoutException {
         Future<Integer> submit = threadPoolTaskExecutor.submit(() -> 1);
-        return ResponseResult.succ(submit.get());
+        return ResResult.succ(submit.get());
     }
 }
