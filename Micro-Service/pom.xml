@@ -26,4 +26,13 @@
         <module>Apache-Dubbo-Zookeeper</module>
     </modules>
 
+    <build>
+        <plugins>
+            <!--boot应用 plugin-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

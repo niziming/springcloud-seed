@@ -79,37 +79,33 @@
     </dependencies>
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <!-- MyBatis 逆向工程 插件 -->
-            <plugin>
-                <groupId>org.mybatis.generator</groupId>
-                <artifactId>mybatis-generator-maven-plugin</artifactId>
-                <version>1.3.7</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>mysql</groupId>
-                        <artifactId>mysql-connector-java</artifactId>
-                        <version>8.0.21</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>tk.mybatis</groupId>
-                        <artifactId>mapper</artifactId>
-                        <version>3.4.4</version>
-                    </dependency>
-                </dependencies>
-                <configuration>
-                    <!-- 允许移动生成的文件 -->
-                    <verbose>true</verbose>
-                    <!-- 是否覆盖 -->
-                    <overwrite>true</overwrite>
-                    <!-- 配置文件 -->
-                    <configurationFile>${basedir}/src/main/resources/generatorConfig.xml</configurationFile>
-                </configuration>
-            </plugin>
-        </plugins>
+        <!--<plugins>-->
+        <!--    &lt;!&ndash; MyBatis 逆向工程 插件 &ndash;&gt;-->
+        <!--    <plugin>-->
+        <!--        <groupId>org.mybatis.generator</groupId>-->
+        <!--        <artifactId>mybatis-generator-maven-plugin</artifactId>-->
+        <!--        <version>1.3.7</version>-->
+        <!--        <dependencies>-->
+        <!--            <dependency>-->
+        <!--                <groupId>mysql</groupId>-->
+        <!--                <artifactId>mysql-connector-java</artifactId>-->
+        <!--                <version>8.0.21</version>-->
+        <!--            </dependency>-->
+        <!--            <dependency>-->
+        <!--                <groupId>tk.mybatis</groupId>-->
+        <!--                <artifactId>mapper</artifactId>-->
+        <!--                <version>3.4.4</version>-->
+        <!--            </dependency>-->
+        <!--        </dependencies>-->
+        <!--        <configuration>-->
+        <!--            &lt;!&ndash; 允许移动生成的文件 &ndash;&gt;-->
+        <!--            <verbose>true</verbose>-->
+        <!--            &lt;!&ndash; 是否覆盖 &ndash;&gt;-->
+        <!--            <overwrite>true</overwrite>-->
+        <!--            &lt;!&ndash; 配置文件 &ndash;&gt;-->
+        <!--            <configurationFile>${basedir}/src/main/resources/generatorConfig.xml</configurationFile>-->
+        <!--        </configuration>-->
+        <!--    </plugin>-->
+        <!--</plugins>-->
     </build>
 </project>

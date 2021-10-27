@@ -1,8 +1,7 @@
-package cn.zm.netflix.mybatisplus.web.rest;
+package cn.zm.netflix.bus.web.rest;
 
 import cn.zm.common.base.ResponseResult;
 import cn.zm.common.config.GlobalConfig;
-import cn.zm.plus.base.BaseController;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -19,7 +18,7 @@ import javax.annotation.Resource;
 @RequestMapping("test")
 @RestController
 @Api(tags = "plus-bus-测试接口")
-public class TestController extends BaseController {
+public class TestController {
 
     @Resource
     private GlobalConfig globalConfig;
