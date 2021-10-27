@@ -96,12 +96,11 @@
             <version>${knife4j.version}</version>
         </dependency>
 
-        <!--<dependency>-->
-        <!--    <groupId>com.github.xiaoymin</groupId>-->
-        <!--    <artifactId>knife4j-micro-spring-boot-starter</artifactId>-->
-        <!--    <version>${knife4j.version}</version>-->
-        <!--</dependency>-->
-
+        <!--Actuator：springboot程序监控器-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
 
         <!-- hutool 工具 -->
         <dependency>

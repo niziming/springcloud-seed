@@ -1,0 +1,33 @@
+server:
+  port: 8708
+spring:
+  application:
+    name: bus-plus-rabittmq-app
+################## rabbitmq ##################
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
+  cloud:
+################## cloud config ##################
+    config:
+      uri: http://localhost:8707/
+      label: main
+      profile: common, plus, config
+################## bus ##################
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+################## eureka ##################
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8700/eureka/
+################## actuator ##################
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
