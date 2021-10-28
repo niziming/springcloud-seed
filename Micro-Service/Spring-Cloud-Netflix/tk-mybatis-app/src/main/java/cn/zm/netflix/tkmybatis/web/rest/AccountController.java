@@ -35,9 +35,7 @@ import java.util.List;
 @RestController
 @Api(tags = "接口")
 public class AccountController extends BaseController {
-    @Autowired
-    @Qualifier("accountServiceImpl")
-    // @Resource
+    @Resource
     private IAccountService accountService;
 
     @Value("${server.port}")

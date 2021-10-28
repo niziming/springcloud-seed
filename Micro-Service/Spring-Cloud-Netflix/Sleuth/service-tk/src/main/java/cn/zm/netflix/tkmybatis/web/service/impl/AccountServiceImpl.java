@@ -6,7 +6,7 @@ import cn.zm.tk.base.service.BaseServiceImpl;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@Service("accountService")
+@Service
 @Transactional(rollbackFor = Exception.class)
 public class AccountServiceImpl extends BaseServiceImpl<Account> implements IAccountService {
 }

@@ -8,7 +8,6 @@ import tk.mybatis.spring.annotation.MapperScan;
 
 @EnableEurekaClient
 @SpringBootApplication
-@MapperScan("cn.zm")
 public class TkMybatisApp {
     public static void main(String[] args) {
         SpringApplication.run(TkMybatisApp.class, args);
