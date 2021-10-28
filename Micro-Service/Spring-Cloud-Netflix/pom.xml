@@ -23,6 +23,7 @@
         <module>Zuul</module>
         <module>Config</module>
         <module>Bus</module>
+        <module>Sleuth</module>
     </modules>
 
     <packaging>pom</packaging>

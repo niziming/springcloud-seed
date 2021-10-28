@@ -1,10 +1,10 @@
-package cn.zm.netflix.feign.web.service;
+package cn.zm.netflix.mybatisplus.web.service;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@FeignClient("SERVICE-APP")
-public interface FeignService {
+@FeignClient("service-tk-8710")
+public interface ServiceTkService {
     @GetMapping("/account/ribbon/service")
-    String testFeign();
+    String getTkInfo();
 }
