@@ -58,6 +58,12 @@
             </exclusions>
         </dependency>
 
+        <!--聚合 hystrix 数据-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-turbine</artifactId>
+        </dependency>
+
         <!-- 导入配置文件处理器，配置文件进行绑定就会有提示 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
