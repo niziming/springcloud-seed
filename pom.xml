@@ -35,7 +35,6 @@
 
     <dependencyManagement>
         <dependencies>
-
             <!-- spring-boot -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -68,15 +67,11 @@
     <build>
         <plugins>
 
-
-
             <!--文档工具-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
             </plugin>
-
-
 
         </plugins>
     </build>
