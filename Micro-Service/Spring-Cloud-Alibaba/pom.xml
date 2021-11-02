@@ -11,12 +11,40 @@
 
     <artifactId>Spring-Cloud-Alibaba</artifactId>
     <packaging>pom</packaging>
+
     <modules>
         <module>gateway</module>
     </modules>
+
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
+        <alibaba-cloud.version>2.2.1.RELEASE</alibaba-cloud.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!--Spring Cloud Alibaba-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${alibaba-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--netflix cloud 统一依赖-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
 
 </project>
