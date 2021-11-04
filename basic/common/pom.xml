@@ -16,10 +16,7 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <!--<mysql.version>8.0.22</mysql.version>-->
-        <!--<commons-lang3.version>3.10</commons-lang3.version>-->
         <druid.version>1.1.22</druid.version>
-        <!--<lombok.version>1.18.16</lombok.version>-->
         <hutool.version>5.3.10</hutool.version>
         <knife4j.version>2.0.8</knife4j.version>
         <fastjson.version>1.2.58</fastjson.version>

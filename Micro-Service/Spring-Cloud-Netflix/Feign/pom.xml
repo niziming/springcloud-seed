@@ -19,7 +19,7 @@
     <dependencies>
 
 
-        <!--统一依赖-->
+        <!--统一基础依赖-->
         <dependency>
             <groupId>cn.zm</groupId>
             <artifactId>common</artifactId>

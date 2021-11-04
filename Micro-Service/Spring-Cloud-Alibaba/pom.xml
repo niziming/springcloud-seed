@@ -13,14 +13,14 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>gateway</module>
+        <module>Gateway</module>
     </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
-        <alibaba-cloud.version>2.2.1.RELEASE</alibaba-cloud.version>
+        <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
+        <alibaba-cloud.version>2.2.6.RELEASE</alibaba-cloud.version>
     </properties>
 
     <dependencyManagement>
@@ -35,7 +35,7 @@
                 <scope>import</scope>
             </dependency>
 
-            <!--netflix cloud 统一依赖-->
+            <!--netflix cloud 统一基础依赖-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
