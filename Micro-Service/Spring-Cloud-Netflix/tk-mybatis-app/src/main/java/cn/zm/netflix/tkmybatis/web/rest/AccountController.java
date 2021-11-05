@@ -1,6 +1,8 @@
 package cn.zm.netflix.tkmybatis.web.rest;
 
 import cn.zm.common.base.ResResult;
+import cn.zm.common.base.TestObje;
+import cn.zm.common.utils.ObjectsUtils;
 import cn.zm.netflix.tkmybatis.web.entity.Account;
 import cn.zm.netflix.tkmybatis.web.entity.dto.AccountDTO;
 import cn.zm.netflix.tkmybatis.web.entity.vo.AccountVO;
@@ -13,6 +15,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RestController;
 import cn.zm.tk.base.BaseController;
+
+import java.util.ArrayList;
 import java.util.stream.Collectors;
 import com.github.pagehelper.Page;
 import io.swagger.annotations.ApiImplicitParam;
@@ -98,5 +102,33 @@ public class AccountController extends BaseController {
     public ResResult ribbonService() {
         // TODO 负载均衡测试
         return ResResult.succ("tkapp:"+port);
+    }
+
+    @GetMapping("test")
+    @ApiOperation("测试树结构")
+    public ResResult<List<TestObje>> test() {
+        TestObje build = TestObje.builder().build();
+        TestObje build1 = TestObje.builder().build();
+        TestObje build2 = TestObje.builder().build();
+        ArrayList<TestObje> testObjes = new ArrayList<>();
+
+        build.setId("1");
+        build.setPid("0");
+        build.setName("parent");
+
+        build1.setId("2");
+        build1.setPid("1");
+        build1.setName("child");
+
+        build2.setId("3");
+        build2.setPid("2");
+        build2.setName("child");
+
+        testObjes.add(build);
+        testObjes.add(build1);
+        testObjes.add(build2);
+        List<TestObje> testObjes1 = ObjectsUtils.list2Tree(t -> t.getPid(), testObjes, "0");
+        // TODO 负载均衡测试
+        return ResResult.succ(testObjes1);
     }
 }
