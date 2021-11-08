@@ -1,6 +1,8 @@
 package cn.zm.gateway.config;
 
 import cn.zm.gateway.filter.RequestTimeFilter;
+import cn.zm.gateway.filter.TokenFilter;
+import cn.zm.gateway.filter.factory.RequestTimeGatewayFilterFactory;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
@@ -22,6 +24,11 @@ public class RouteConfig {
   private final String FORWARD = "/gateway/fallback";
 
   @Bean
+  public RequestTimeGatewayFilterFactory elapsedGatewayFilterFactory() {
+    return new RequestTimeGatewayFilterFactory();
+  }
+
+  @Bean
   public RouteLocator customerRouteLocator(RouteLocatorBuilder builder) {
     // @formatter:off
     return builder.routes()
@@ -34,6 +41,12 @@ public class RouteConfig {
       )
       .build();
     // @formatter:on
+  }
+
+
+  @Bean
+  public TokenFilter tokenFilter(){
+    return new TokenFilter();
   }
 
 

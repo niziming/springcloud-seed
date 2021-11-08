@@ -5,6 +5,7 @@ import cn.zm.common.base.TestObje;
 import lombok.Data;
 
 import java.util.*;
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
@@ -63,7 +64,25 @@ public class ObjectsUtils {
     return treeMap.get(rootId);
   }
 
+  /** 功能描述: <br>
+   * <list 转 tree 根据 parent id>
+   *
+   * @param pid pid
+   * @param list 数组
+   * @param rootId 根节点
+   *
+   * @author 十渊
+   * @date 2021/11/5 16:41
+   * @return java.util.List<T>
+   */
+  public static <E, T> List<T> list2Tree(Function<T,E> pid, Function<T,E> id, Consumer<T> c, List<T> list, E rootId) {
+    Map<E, List<T>> treeMap = list.stream().collect(Collectors.groupingBy(pid));
+    // list.forEach(i -> i.setChild(treeMap.get(id)));
+    return treeMap.get(rootId);
+  }
+
   public static void main(String[] args) {
+
     TestObje build = TestObje.builder().build();
     TestObje build1 = TestObje.builder().build();
     ArrayList<TestObje> testObjes = new ArrayList<>();
@@ -71,7 +90,6 @@ public class ObjectsUtils {
     build.setId("1");
     build.setPid("0");
     build.setName("parent");
-
 
     testObjes.add(build);
     build1.setId("2");
@@ -81,6 +99,4 @@ public class ObjectsUtils {
     List<TestObje> testObjes1 = list2Tree(t -> t.getPid(), testObjes, "0");
     System.out.println("testObjes1 = " + testObjes1);
   }
-
-
 }
