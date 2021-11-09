@@ -20,6 +20,7 @@
         <hutool.version>5.3.10</hutool.version>
         <knife4j.version>2.0.8</knife4j.version>
         <fastjson.version>1.2.58</fastjson.version>
+        <hibernate-validator.version>5.2.4.Final</hibernate-validator.version>
     </properties>
 
     <dependencies>
@@ -110,6 +111,16 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+
+        <!-- SpringMVC校验 -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <!--<version>5.2.4.Final</version>-->
+            <version>${hibernate-validator.version}</version>
+
         </dependency>
     </dependencies>
 
