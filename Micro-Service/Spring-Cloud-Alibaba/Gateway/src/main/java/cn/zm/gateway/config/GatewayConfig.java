@@ -3,10 +3,12 @@ package cn.zm.gateway.config;
 import cn.zm.gateway.filter.RequestTimeFilter;
 import cn.zm.gateway.filter.TokenFilter;
 import cn.zm.gateway.filter.factory.RequestTimeGatewayFilterFactory;
+import org.springframework.cloud.gateway.filter.ratelimit.KeyResolver;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import reactor.core.publisher.Mono;
 
 /**
  * 功能描述: <br>
@@ -17,7 +19,7 @@ import org.springframework.context.annotation.Configuration;
  * @return
  */
 @Configuration
-public class RouteConfig {
+public class GatewayConfig {
   private final String URL = "http://httpbin.org";
   private final String URL1 = "http://www.baidu.com";
   private final String URL2 = "/error";
@@ -44,12 +46,25 @@ public class RouteConfig {
   }
 
 
+  // @Bean
+  // public TokenFilter tokenFilter(){
+  //   return new TokenFilter();
+  // }
+
   @Bean
-  public TokenFilter tokenFilter(){
-    return new TokenFilter();
+  public HostAddrKeyResolver hostAddrKeyResolver() {
+    return new HostAddrKeyResolver();
   }
 
-
+  // @Bean
+  // public UriKeyResolver uriKeyResolver() {
+  //   return new UriKeyResolver();
+  // }
+  //
+  // @Bean
+  // public KeyResolver userKeyResolver() {
+  //   return new UserKeyResolver();
+  // }
   // @Bean
   // public RouteLocator gatewayRoute(RouteLocatorBuilder builder) {
   //   return builder.routes()
