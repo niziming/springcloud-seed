@@ -77,6 +77,7 @@ spring:
           predicates:
             - Host=**.jermaine.com
           profiles: host_route
+
 ---
 spring:
   cloud:
@@ -102,6 +103,7 @@ spring:
           filters:
             - RewritePath=/foo/(?<segment>.*), /$\{segment}
   profiles: rewritepath_route
+
 ---
 spring:
   cloud:

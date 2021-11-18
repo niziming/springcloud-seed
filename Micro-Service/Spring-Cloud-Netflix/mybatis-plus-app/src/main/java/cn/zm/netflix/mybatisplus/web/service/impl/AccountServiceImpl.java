@@ -1,24 +1,24 @@
 package cn.zm.netflix.mybatisplus.web.service.impl;
 
-import cn.hutool.core.collection.CollectionUtil;
-import cn.hutool.core.util.ArrayUtil;
 import cn.zm.netflix.mybatisplus.web.entity.Account;
 import cn.zm.netflix.mybatisplus.web.entity.dto.AccountDTO;
 import cn.zm.netflix.mybatisplus.web.entity.vo.AccountVO;
 import cn.zm.netflix.mybatisplus.web.mapper.AccountMapper;
 import cn.zm.netflix.mybatisplus.web.service.IAccountService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import cn.zm.plus.utils.ConvertUtil;
 
-import java.util.ArrayList;
-import java.util.List;
-
-
+/** 功能描述: <br>
+ * <测->
+ *
+ * @author 十渊
+ * @date 2021/11/17 16:35
+ * @return
+ */
 @Service
 @Transactional(rollbackFor = Exception.class)
 public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> implements IAccountService {
