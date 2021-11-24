@@ -2,10 +2,55 @@ server:
   port: 8711
 spring:
   profiles:
-    active: gateway-limiter
+    active: admin-clinet
   application:
     name: gateway-8711
 
+---
+spring:
+  profiles: admin-clinet
+  boot:
+    admin:
+      client:
+        url: http://localhost:8712
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+---
+spring:
+  profiles: gateway-router
+  cloud:
+    gateway:
+      discovery:
+        locator:
+#          表明gateway开启服务注册和发现的功能
+          enabled: false
+#          是将请求路径上的服务名配置为小写（因为服务注册的时候，向注册中心注册时将服务名转成大写的了）
+          lowerCaseServiceId: true
+      routes:
+        - id: service-tk-8710
+          uri: lb://service-tk-8710
+          predicates:
+            - Path=/tk/**
+          filters:
+            - StripPrefix=1
+        - id: service-plus-8709
+          uri: lb://service-plus-8709
+          predicates:
+            - Path=/plus/**
+          filters:
+            - StripPrefix=1
+# eureka
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8700/eureka/
 ---
 spring:
   profiles: gateway-limiter
