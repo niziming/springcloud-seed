@@ -1,4 +1,4 @@
-package cn.zm.gateway.config;
+package cn.zm.nacos.config;
 
 
 import org.springframework.cloud.gateway.filter.ratelimit.KeyResolver;

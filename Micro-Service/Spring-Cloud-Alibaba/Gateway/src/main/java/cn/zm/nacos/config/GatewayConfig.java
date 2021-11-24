@@ -1,14 +1,6 @@
-package cn.zm.gateway.config;
+package cn.zm.nacos.config;
 
-import cn.zm.gateway.filter.RequestTimeFilter;
-import cn.zm.gateway.filter.TokenFilter;
-import cn.zm.gateway.filter.factory.RequestTimeGatewayFilterFactory;
-import org.springframework.cloud.gateway.filter.ratelimit.KeyResolver;
-import org.springframework.cloud.gateway.route.RouteLocator;
-import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import reactor.core.publisher.Mono;
 
 /**
  * 功能描述: <br>

@@ -14,6 +14,8 @@
 
     <modules>
         <module>Gateway</module>
+        <module>Nacos</module>
+        <module>Spring-Boot-Admin-Client</module>
         <module>Spring-Boot-Admin-Server</module>
     </modules>
 
