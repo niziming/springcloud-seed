@@ -1,4 +1,4 @@
-package cn.zm.nacos.filter;
+package cn.zm.gateway.filter;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
