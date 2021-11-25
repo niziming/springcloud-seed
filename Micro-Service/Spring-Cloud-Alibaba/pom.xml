@@ -26,6 +26,8 @@
         <alibaba-cloud.version>2.2.6.RELEASE</alibaba-cloud.version>
     </properties>
 
+
+
     <dependencyManagement>
         <dependencies>
 

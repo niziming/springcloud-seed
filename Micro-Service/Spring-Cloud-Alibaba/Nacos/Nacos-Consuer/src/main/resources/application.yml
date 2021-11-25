@@ -1,5 +1,13 @@
 server:
-  port: 8714
+  port: 8715
 spring:
   application:
-    name: nacos-8714
+    name: nacos-consuer-8715
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+#        namespace: 333f1c20-282b-46f5-aeeb-c7ab6e6f5bac
+  main:
+    #允许存在多个Feign调用相同Service的接口
+    allow-bean-definition-overriding: true
