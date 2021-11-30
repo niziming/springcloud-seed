@@ -15,8 +15,8 @@
     <modules>
         <module>Gateway</module>
         <module>Nacos</module>
-        <module>Spring-Boot-Admin-Client</module>
-        <module>Spring-Boot-Admin-Server</module>
+        <module>spring-boot-admin-client</module>
+        <module>spring-boot-admin-server</module>
     </modules>
 
     <properties>
@@ -26,7 +26,12 @@
         <alibaba-cloud.version>2.2.6.RELEASE</alibaba-cloud.version>
     </properties>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
 
     <dependencyManagement>
         <dependencies>

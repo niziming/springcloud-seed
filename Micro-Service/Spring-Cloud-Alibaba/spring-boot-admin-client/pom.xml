@@ -9,15 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>Nacos</artifactId>
-
-    <packaging>pom</packaging>
-
-    <modules>
-        <module>nacos-provider</module>
-        <module>nacos-consuer</module>
-        <module>nacos-config</module>
-    </modules>
+    <artifactId>spring-boot-admin-client</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -25,7 +17,11 @@
     </properties>
 
     <dependencies>
-
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-client</artifactId>
+            <version>2.3.1</version>
+        </dependency>
     </dependencies>
 
 
