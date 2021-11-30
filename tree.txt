@@ -526,7 +526,7 @@ D:\jermaine\IdeaProjects\SpringCloud-Seed
 |       |          |   |  |  |  | | |    |   |  ├─service
 |       |          |   |  |  |  | | |    |   |  |    ├─impl
 |       |          |   |  |  |  | | |    |   |  ├─rest
-|       ├─Spring-Cloud-Alibaba
+|       ├─SpringCloud-Alibaba
 |       |          └pom.xml
 |       ├─Apache-Dubbo-Zookeeper
 |       |           ├─pom.xml

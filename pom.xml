@@ -20,7 +20,7 @@
     <description>
         三种主流方案的微服务种子项目
         1.Spring Cloud Netflix
-        2.Spring-Cloud-Alibaba
+        2.SpringCloud-Alibaba
         3.Apache-Dubbo-Zookeeper
     </description>
 
