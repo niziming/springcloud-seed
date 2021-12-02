@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: nacos-gateway-8717
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yml
+        prefix: nacos-gateway-dev
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+          lowerCaseServiceId: true
+      routes:
+        - id: nacos-provider-8714
+          uri: lb://nacos-provider-8714
+          predicates:
+            - Path=/provider/**
+          filters:
+            - StripPrefix=1
