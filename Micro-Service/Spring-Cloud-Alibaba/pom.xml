@@ -14,6 +14,7 @@
 
     <modules>
         <module>Gateway</module>
+        <module>Sentinel</module>
         <module>Nacos</module>
         <module>SpringBootAdmin</module>
     </modules>
