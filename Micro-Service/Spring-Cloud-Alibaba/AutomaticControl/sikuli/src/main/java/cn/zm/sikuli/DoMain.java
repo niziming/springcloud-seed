@@ -1,10 +1,8 @@
-package cn.zm.mouse;
+package cn.zm.sikuli;
 
 import java.awt.*;
 import java.awt.event.InputEvent;
-import java.awt.event.KeyEvent;
 
-import org.apache.pdfbox.util.Hex;
 import org.sikuli.script.*;
 import org.sikuli.script.support.IRobot;
 
@@ -20,7 +18,6 @@ public class DoMain {
 
   private static void autoWatch() {
     Screen s = new Screen();
-
     String imgpath = "D:/java/sikuli/img/";
 
     try {
@@ -103,8 +100,8 @@ public class DoMain {
         s.click(imgpath+"next.png", 1);
 
         if (i != 4) {
-          s.wait(imgpath+"add_windows.png",7);
-          s.click(imgpath+"add_windows.png");
+          s.wait(imgpath+"add_win.png",7);
+          s.click(imgpath+"add_win.png");
         }
       }
 

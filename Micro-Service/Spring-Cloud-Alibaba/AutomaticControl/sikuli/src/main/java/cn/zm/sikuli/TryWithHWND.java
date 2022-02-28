@@ -1,12 +1,7 @@
-package cn.zm.mouse;
+package cn.zm.sikuli;
 
-import com.sun.jna.Native;
-import com.sun.jna.Pointer;
 import com.sun.jna.platform.win32.User32;
 import com.sun.jna.platform.win32.WinDef.HWND;
-import com.sun.jna.platform.win32.WinUser;
-import com.sun.jna.platform.win32.WinUser.WNDENUMPROC;
-import com.sun.jna.win32.StdCallLibrary;
 
 public class TryWithHWND {
   // public interface User32 extends StdCallLibrary {

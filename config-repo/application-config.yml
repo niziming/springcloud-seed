@@ -1,8 +1,0 @@
-################## custom config ##################
-global:
-  config:
-    foo:
-      bar: hello world
-  netty:
-    foo:
-      bar: hello world

@@ -19,7 +19,7 @@
     </properties>
 
     <modules>
-        <module>mouse</module>
+        <module>sikuli</module>
         <module>ac-service</module>
     </modules>
 

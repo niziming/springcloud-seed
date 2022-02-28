@@ -31,9 +31,11 @@
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>Spring-Cloud-Alibaba-nacos-config</artifactId>
-            <version>0.2.1.RELEASE</version>
+            <artifactId>spring-cloud-alibaba-nacos-config</artifactId>
+            <version>0.2.0.RELEASE</version>
+            <!--<version>0.2.1.RELEASE</version>-->
         </dependency>
+
     </dependencies>
 
 

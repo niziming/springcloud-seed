@@ -1,4 +1,4 @@
-package cn.zm.mouse;
+package cn.zm.sikuli;
 
 public class Win32 {
 }
