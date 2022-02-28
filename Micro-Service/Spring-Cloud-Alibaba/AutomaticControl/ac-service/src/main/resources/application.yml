@@ -1,0 +1,7 @@
+server:
+  port: 8719
+spring:
+  application:
+    name: automatic-control-8719
+  profiles:
+    active: common, plus

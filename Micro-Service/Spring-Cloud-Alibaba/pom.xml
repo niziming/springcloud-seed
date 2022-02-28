@@ -17,6 +17,7 @@
         <module>Sentinel</module>
         <module>Nacos</module>
         <module>SpringBootAdmin</module>
+        <module>AutomaticControl</module>
     </modules>
 
     <properties>
