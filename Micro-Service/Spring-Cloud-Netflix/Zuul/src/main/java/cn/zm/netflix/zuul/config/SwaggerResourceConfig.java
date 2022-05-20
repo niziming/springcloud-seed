@@ -44,4 +44,6 @@ public class SwaggerResourceConfig implements SwaggerResourcesProvider {
         swaggerResource.setSwaggerVersion("2.0");
         return swaggerResource;
     }
+
+
 }

@@ -1,0 +1,23 @@
+server:
+  port: 8701
+spring:
+  profiles:
+    active: common, plus
+  application:
+    name: service-app
+
+logging:
+  level:
+    cn.zm: debug
+global:
+  config:
+    foo:
+      bar: hello world
+  netty:
+    foo:
+      bar: hello world
+## eureka
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8700/eureka/
