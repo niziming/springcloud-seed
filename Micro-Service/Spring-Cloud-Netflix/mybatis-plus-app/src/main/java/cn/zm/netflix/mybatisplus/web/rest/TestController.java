@@ -4,14 +4,15 @@ import cn.hutool.core.lang.Assert;
 import cn.zm.common.base.ResResult;
 import cn.zm.common.config.GlobalConfig;
 import cn.zm.netflix.mybatisplus.web.mapper.TestMapper;
+import cn.zm.netflix.mybatisplus.web.observer.Publisher;
 import cn.zm.plus.base.BaseController;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
@@ -30,6 +31,18 @@ public class TestController extends BaseController {
 
   @Resource
   private TestMapper testMapper;
+
+
+  @Autowired
+  private Publisher demoPublisher;
+
+  @GetMapping("testObserver")
+  @ApiOperation("测试观察者模式")
+  public ResResult testObserver(String msg) {
+    // TODO 查询
+    demoPublisher.publish(msg);
+    return ResResult.succ(msg);
+  }
 
   @GetMapping
   @ApiOperation("获取全局配置")
