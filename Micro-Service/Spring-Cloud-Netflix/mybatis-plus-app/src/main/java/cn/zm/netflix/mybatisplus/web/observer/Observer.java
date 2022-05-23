@@ -10,6 +10,11 @@ import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
+/**
+ *
+ * 观察者模式
+ * @author 十渊Jermaine
+ */
 @Getter
 @Setter
 public class Observer extends ApplicationEvent {
