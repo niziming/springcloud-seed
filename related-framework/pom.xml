@@ -20,6 +20,7 @@
 
     <modules>
         <module>RabittMQ</module>
+        <module>netty</module>
     </modules>
 
 </project>
