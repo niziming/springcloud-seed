@@ -1,4 +1,4 @@
-D:\jermaine\IdeaProjects\SpringCloud-Seed
+D:\jermaine\IdeaProjects\springcloud-seed
 ├─.gitignore
 ├─pom.xml
 ├─README.md

@@ -14,7 +14,7 @@
 
     <packaging>pom</packaging>
     <groupId>cn.zm</groupId>
-    <artifactId>SpringCloud-Seed</artifactId>
+    <artifactId>springcloud-seed</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <description>
@@ -27,6 +27,7 @@
     <modules>
         <module>basic-dependency</module>
         <module>Micro-Service</module>
+        <module>related-framework</module>
     </modules>
 
     <properties>
@@ -37,12 +38,12 @@
     <dependencyManagement>
         <dependencies>
             <!-- spring-boot -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${project.version}</version>
-                <type>pom</type>
-            </dependency>
+            <!--<dependency>-->
+            <!--    <groupId>org.springframework.boot</groupId>-->
+            <!--    <artifactId>spring-boot-dependencies</artifactId>-->
+            <!--    &lt;!&ndash;<version>${project.version}</version>&ndash;&gt;-->
+            <!--    <type>pom</type>-->
+            <!--</dependency>-->
 
             <dependency>
                 <groupId>cn.zm</groupId>
@@ -69,10 +70,10 @@
         <plugins>
 
             <!--文档工具-->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-            </plugin>
+            <!--<plugin>-->
+            <!--    <groupId>org.apache.maven.plugins</groupId>-->
+            <!--    <artifactId>maven-javadoc-plugin</artifactId>-->
+            <!--</plugin>-->
 
         </plugins>
     </build>
