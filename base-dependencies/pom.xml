@@ -10,7 +10,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>basic-dependency</artifactId>
+    <artifactId>base-dependencies</artifactId>
 
     <packaging>pom</packaging>
 

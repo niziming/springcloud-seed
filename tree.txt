@@ -2,7 +2,7 @@ D:\jermaine\IdeaProjects\springcloud-seed
 ├─.gitignore
 ├─pom.xml
 ├─README.md
-├─Micro-Service
+├─micro-service
 |       ├─pom.xml
 |       ├─Spring-Cloud-Netflix
 |       |          ├─pom.xml
