@@ -35,6 +35,15 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
+    <dependencies>
+        <!--lombok 此版本支持SuperBuilder-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
     <dependencyManagement>
         <dependencies>
             <!-- spring-boot -->
@@ -45,9 +54,22 @@
             <!--    <type>pom</type>-->
             <!--</dependency>-->
 
+            <!--jwt-->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>0.9.1</version>
+            </dependency>
+
             <dependency>
                 <groupId>cn.zm</groupId>
                 <artifactId>common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.zm</groupId>
+                <artifactId>knife4j</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

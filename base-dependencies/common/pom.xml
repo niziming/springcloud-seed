@@ -45,14 +45,6 @@
             <version>${druid.version}</version>
         </dependency>
 
-        <!--lombok 此版本支持SuperBuilder-->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.4</version>
-            <!--<scope>provided</scope>-->
-        </dependency>
-
         <!-- commons-lang3 -->
         <dependency>
             <groupId>org.apache.commons</groupId>

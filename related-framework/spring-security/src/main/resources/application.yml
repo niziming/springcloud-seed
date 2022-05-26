@@ -1,0 +1,15 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: JermaineSecurity
+  security:
+    user:
+      name: user
+      password: user
+jwt:
+  token:
+    prefix: "Bearer "
+  admin: jermaine
+  secret: jermaine_secret # 千万不能使用中文.
+  ignore: /doc.html,/webjars/**,/swagger-resources/**,/v2/api-docs/**,/v2/api-docs**,/security/not/authentication,/jwt/authenticate

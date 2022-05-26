@@ -21,6 +21,7 @@
     <modules>
         <module>RabittMQ</module>
         <module>netty</module>
+        <module>spring-security</module>
     </modules>
 
 </project>
