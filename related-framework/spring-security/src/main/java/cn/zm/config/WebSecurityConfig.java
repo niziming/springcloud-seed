@@ -2,7 +2,6 @@ package cn.zm.config;
 
 import cn.zm.filter.JwtRequestFilter;
 import cn.zm.filter.PermissionsFilter;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -58,7 +57,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     httpSecurity.csrf().disable()
       // dont authenticate this particular request
       .authorizeRequests()
-      // .antMatchers(ignore).permitAll()
+      // .antMatchers(ignore)
+      // .permitAll()
       .antMatchers("/admin/url").hasRole("admin")
       .antMatchers("/emp/url").hasRole("emp")
       // all other requests need to be authenticated
@@ -68,9 +68,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
       .exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint).and().sessionManagement()
       .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
-    httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
     // Add a filter to validate the permissions with every request
-    httpSecurity.addFilter(permissionsFilter);
+
+    httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
+
+    // httpSecurity.addFilter(permissionsFilter);
   }
 
   /**

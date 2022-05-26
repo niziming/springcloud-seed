@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 // @SpringBootApplication(scanBasePackages = {"cn.zm"})
-public class SecurityAppLogin {
+public class SecurityApp {
   public static void main(String[] args) {
-    SpringApplication.run(SecurityAppLogin.class, args);
+    SpringApplication.run(SecurityApp.class, args);
   }
 }

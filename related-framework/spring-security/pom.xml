@@ -10,11 +10,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>spring-security</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>spring-security-login</module>
-        <module>spring-security-jwt</module>
-    </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
