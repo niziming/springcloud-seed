@@ -6,9 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * @author jermaine
  */
-@SpringBootApplication(scanBasePackages = {"cn.zm"})
-public class SecurityApp {
+@SpringBootApplication
+// @SpringBootApplication(scanBasePackages = {"cn.zm"})
+public class SecurityAppLogin {
   public static void main(String[] args) {
-    SpringApplication.run(SecurityApp.class, args);
+    SpringApplication.run(SecurityAppLogin.class, args);
   }
 }
