@@ -17,6 +17,8 @@
     </properties>
 
     <dependencies>
+
+
         <!-- spring cloud config 客户端包 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -27,6 +29,11 @@
         <dependency>
             <groupId>cn.zm</groupId>
             <artifactId>mybatis-plus</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.zm</groupId>
+            <artifactId>knife4j</artifactId>
         </dependency>
 
         <!--eureka client-->

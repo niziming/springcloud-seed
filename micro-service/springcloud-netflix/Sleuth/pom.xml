@@ -23,4 +23,11 @@
         <module>service-tk</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>cn.zm</groupId>
+            <artifactId>knife4j</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>

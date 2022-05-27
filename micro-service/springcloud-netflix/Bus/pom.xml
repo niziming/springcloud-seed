@@ -18,6 +18,11 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>cn.zm</groupId>
+            <artifactId>knife4j</artifactId>
+        </dependency>
+
         <!--微服务下 RabbitMq 依赖-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

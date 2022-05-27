@@ -43,20 +43,20 @@ public class  BaseController {
                 request.getParameter(SIZE),
                 request.getParameter(ORDER_BY_COLUMN),
                 request.getParameter(IS_DESC));
-        Integer page = Convert.toInt(request.getParameter(PAGE));
-        Integer size = Convert.toInt(request.getParameter(SIZE));
+        Integer page = Convert.toInt(request.getParameter(PAGE)) == null ? 1 : Convert.toInt(request.getParameter(PAGE));
+        Integer size = Convert.toInt(request.getParameter(SIZE)) == null ? 10 : Convert.toInt(request.getParameter(SIZE));
         String orderByColumn = Convert.toStr(request.getParameter(ORDER_BY_COLUMN));
         Boolean isDesc = Convert.toBool(request.getParameter(IS_DESC));
-        if (Objects.isNull(page) || Objects.isNull(size)) {
-            return new Page<>();
-        }
+
+        Page<T> iPage = new Page<>(page, size);
         if (StringUtils.isNotBlank(orderByColumn)) {
-            if (Optional.ofNullable(isDesc).orElse(false)) {
-                return new Page<T>(page, size).addOrder(OrderItem.desc(orderByColumn));
-            }
-            return new Page<T>(page, size).addOrder(OrderItem.asc(orderByColumn));
+            OrderItem orderItem = Objects.isNull(isDesc) ?
+              OrderItem.asc(orderByColumn) :
+              isDesc ? OrderItem.desc(orderByColumn) :
+                OrderItem.asc(orderByColumn);
+            iPage.addOrder(orderItem);
         }
-        return new Page<>(page, size);
+        return iPage;
     }
 
     private ServletRequestAttributes getAttributes() {

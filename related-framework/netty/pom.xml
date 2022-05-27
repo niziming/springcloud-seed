@@ -16,6 +16,10 @@
     <dependencies>
         <dependency>
             <groupId>cn.zm</groupId>
+            <artifactId>knife4j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.zm</groupId>
             <artifactId>common</artifactId>
         </dependency>
         <!--netty-->

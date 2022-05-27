@@ -38,6 +38,11 @@
             </exclusions>
         </dependency>
 
+        <dependency>
+            <groupId>cn.zm</groupId>
+            <artifactId>knife4j</artifactId>
+        </dependency>
+
         <!--druid线程池-->
         <dependency>
             <groupId>com.alibaba</groupId>

@@ -50,6 +50,7 @@ public class Knife4jConfiguration {
       .select()
       //这里指定Controller扫描包路径
       .apis(RequestHandlerSelectors.basePackage("cn.zm"))
+      .apis(RequestHandlerSelectors.any())
       //这里指定Controller扫描包路径
       .apis(RequestHandlerSelectors.withClassAnnotation(RestController.class))
       .paths(PathSelectors.any())

@@ -17,6 +17,11 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>cn.zm</groupId>
+            <artifactId>knife4j</artifactId>
+        </dependency>
+
         <!--统一基础依赖-->
         <dependency>
             <groupId>cn.zm</groupId>

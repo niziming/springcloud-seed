@@ -1,10 +1,13 @@
 package cn.zm.plus.utils;
 
+import cn.zm.common.base.BaseEntity;
 import org.springframework.beans.BeanUtils;
 
 import java.lang.reflect.ParameterizedType;
 
-public class ObjectConvert<T> {
+public class ObjectConvert<T>
+  extends BaseEntity
+{
 
     protected void beforeConvert() {
     }
