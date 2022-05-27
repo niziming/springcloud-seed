@@ -4,6 +4,8 @@ import cn.zm.entity.JwtRequest;
 import cn.zm.entity.JwtResponse;
 import cn.zm.service.JwtUserDetailsService;
 import cn.zm.util.JwtTokenUtil;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -13,6 +15,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
+@Api(tags = "认证接口")
 @RestController
 @RequestMapping("jwt")
 @CrossOrigin
@@ -26,6 +29,8 @@ public class JwtAuthenticationController {
   @Autowired
   private JwtUserDetailsService jwtuserDetailsService;
 
+
+  @ApiOperation("认证")
   @PostMapping("/authenticate")
   public ResponseEntity<JwtResponse> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
 

@@ -7,6 +7,8 @@ spring:
     user:
       name: user
       password: user
+  profiles:
+    active: plus, common
 jwt:
   token:
     prefix: "Bearer "
