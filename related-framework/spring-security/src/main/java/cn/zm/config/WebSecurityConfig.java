@@ -2,6 +2,7 @@ package cn.zm.config;
 
 import cn.zm.filter.JwtRequestFilter;
 import cn.zm.filter.PermissionsFilter;
+import cn.zm.handler.JwtAuthenticationEntryPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

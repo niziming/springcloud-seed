@@ -23,7 +23,7 @@ import java.util.List;
 @Slf4j
 @Configuration
 @EnableSwagger2
-public class GlobalConfiguration {
+public class Knife4jConfig {
 
   @Autowired
   JwtTokenUtil jwtTokenUtil;

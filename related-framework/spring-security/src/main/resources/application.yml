@@ -2,7 +2,7 @@ server:
   port: 8080
 spring:
   application:
-    name: JermaineSecurity
+    name: security
   security:
     user:
       name: user
