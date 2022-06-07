@@ -1,9 +1,14 @@
 package cn.zm.rest;
 
 import cn.zm.entity.JwtRequest;
+import cn.zm.web.entity.RoleAccountResource;
 import cn.zm.entity.JwtResponse;
 import cn.zm.service.JwtUserDetailsService;
 import cn.zm.util.JwtTokenUtil;
+import cn.zm.web.entity.Role;
+import cn.zm.web.service.IRoleAccountResourceService;
+import cn.zm.web.service.IRoleService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +17,15 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Api(tags = "认证接口")
 @RestController
@@ -29,6 +41,11 @@ public class JwtAuthenticationController {
   @Autowired
   private JwtUserDetailsService jwtuserDetailsService;
 
+  @Autowired
+  private IRoleService roleService;
+
+  @Resource
+  private IRoleAccountResourceService roleAccountResourceService;
 
   @ApiOperation("认证")
   @PostMapping("/authenticate")
@@ -47,7 +64,8 @@ public class JwtAuthenticationController {
   // authenticate 认证
   private void authenticate(String username, String password) throws Exception {
     try {
-      authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
+      UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, password);
+      authenticationManager.authenticate(authenticationToken);
     } catch (DisabledException e) {
       throw new Exception("USER_DISABLED", e);
     } catch (BadCredentialsException e) {

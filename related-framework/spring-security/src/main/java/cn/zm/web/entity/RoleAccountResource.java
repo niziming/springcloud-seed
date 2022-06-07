@@ -1,10 +1,8 @@
 package cn.zm.web.entity;
 
-import cn.zm.web.entity.vo.AccountVO;
+import cn.zm.web.entity.vo.RoleAccountResourceVO;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.annotation.IdType;
 import cn.zm.plus.utils.ObjectConvert;
-import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -18,15 +16,24 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-@TableName("account")
-@ApiModel(value="Account对象", description="账户表")
-public class Account {
+@TableName("role_account_resource")
+@ApiModel(value="RoleAccountResource对象", description="VIEW")
+public class RoleAccountResource {
     @ApiModelProperty(value = "账户标识")
-    @TableId(value = "id", type = IdType.AUTO)
-    private Long id;
+    private Long accountId;
     @ApiModelProperty(value = "账户")
     private String username;
     @ApiModelProperty(value = "密码")
     private String password;
+    @ApiModelProperty(value = "角色标识")
+    private Long roleId;
+    @ApiModelProperty(value = "角色名称")
+    private String rolename;
+    @ApiModelProperty(value = "系统资源标识")
+    private Long resourceId;
+    @ApiModelProperty(value = "资源名称")
+    private String resourceName;
+    @ApiModelProperty(value = "Api")
+    private String apiUrl;
 }
 

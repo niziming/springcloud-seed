@@ -7,6 +7,10 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+/**
+ *
+ * @author DELL
+ */
 @Slf4j
 @Configuration                            // 1.主要用于标记配置类，兼备Component的效果。
 @EnableScheduling                         // 2.开启定时任务

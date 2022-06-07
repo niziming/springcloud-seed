@@ -2,6 +2,7 @@ package cn.zm.filter;
 
 import cn.zm.service.JwtUserDetailsService;
 import cn.zm.util.JwtTokenUtil;
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +48,9 @@ public class JwtRequestFilter extends OncePerRequestFilter {
       jwtToken = requestTokenHeader.substring(7);
       try {
         username = jwtTokenUtil.getUsernameFromToken(jwtToken);
+        Claims claims = jwtTokenUtil.getAllClaimsFromToken(jwtToken);
+        claims.get("authorities");
+        System.out.println("claims = " + claims);
       } catch (IllegalArgumentException e) {
         System.out.println("Unable to get JWT Token");
       } catch (ExpiredJwtException e) {
