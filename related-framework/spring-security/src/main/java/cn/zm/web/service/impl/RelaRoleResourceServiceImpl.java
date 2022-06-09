@@ -1,9 +1,7 @@
 package cn.zm.web.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
-import cn.zm.web.entity.Account;
 import cn.zm.web.entity.RelaRoleResource;
-import cn.zm.web.entity.vo.AccountVO;
 import cn.zm.web.mapper.RelaRoleResourceMapper;
 import cn.zm.web.service.IRelaRoleResourceService;
 import cn.zm.web.entity.dto.RelaRoleResourceDTO;
@@ -15,7 +13,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import cn.zm.plus.utils.ConvertUtil;
 
 import java.util.stream.Collectors;
 

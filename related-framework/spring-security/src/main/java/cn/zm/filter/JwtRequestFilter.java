@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
@@ -47,19 +48,22 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     if (requestTokenHeader != null && requestTokenHeader.startsWith(prefix)) {
       jwtToken = requestTokenHeader.substring(7);
       try {
-        username = jwtTokenUtil.getUsernameFromToken(jwtToken);
         Claims claims = jwtTokenUtil.getAllClaimsFromToken(jwtToken);
+        username = jwtTokenUtil.getUsernameFromToken(jwtToken);
         claims.get("authorities");
+        String id = claims.getId();
         System.out.println("claims = " + claims);
       } catch (IllegalArgumentException e) {
         System.out.println("Unable to get JWT Token");
+        // throw e;
       } catch (ExpiredJwtException e) {
         System.out.println("JWT Token has expired");
+        // throw e;
       }
     } else {
       logger.warn("JWT Token does not begin with Bearer String");
     }
-
+    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
     // Once we get the token validate it.
     if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
 
@@ -69,8 +73,8 @@ public class JwtRequestFilter extends OncePerRequestFilter {
       // authentication
       if (jwtTokenUtil.validateToken(jwtToken, userDetails)) {
 
-        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
-          userDetails, null, userDetails.getAuthorities());
+        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
+          new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
         usernamePasswordAuthenticationToken
           .setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
         // After setting the Authentication in the context, we specify

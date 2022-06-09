@@ -20,11 +20,16 @@ import java.io.IOException;
 public class UserLoginFailureHandler implements AuthenticationFailureHandler {
   /**
    * 登录失败返回结果
+   *
    * @Author Sans
    * @CreateTime 2019/10/3 9:12
    */
   @Override
-  public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException {
+  public void onAuthenticationFailure(
+    HttpServletRequest request,
+    HttpServletResponse response,
+    AuthenticationException exception
+  ) throws IOException {
     // 这些对于操作的处理类可以根据不同异常进行不同处理
     if (exception instanceof UsernameNotFoundException)
       response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Username not found");
@@ -32,7 +37,7 @@ public class UserLoginFailureHandler implements AuthenticationFailureHandler {
       response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "User locked");
     if (exception instanceof BadCredentialsException)
       response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Bad credentials");
-    log.info("[登录失败]"+exception.getMessage());
+    log.info("[登录失败]" + exception.getMessage());
     response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Login failed");
   }
 }

@@ -22,6 +22,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -49,7 +50,10 @@ public class JwtAuthenticationController {
 
   @ApiOperation("认证")
   @PostMapping("/authenticate")
-  public ResponseEntity<JwtResponse> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
+  public ResponseEntity<JwtResponse> createAuthenticationToken(
+    @RequestBody JwtRequest authenticationRequest,
+    HttpServletResponse response
+    ) {
 
     authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
 
@@ -62,14 +66,14 @@ public class JwtAuthenticationController {
   }
 
   // authenticate 认证
-  private void authenticate(String username, String password) throws Exception {
+  private void authenticate(String username, String password)  {
     try {
       UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, password);
       authenticationManager.authenticate(authenticationToken);
     } catch (DisabledException e) {
-      throw new Exception("USER_DISABLED", e);
+      throw new DisabledException("USER_DISABLED", e);
     } catch (BadCredentialsException e) {
-      throw new Exception("INVALID_CREDENTIALS", e);
+      throw new BadCredentialsException("INVALID_CREDENTIALS", e);
     }
   }
 

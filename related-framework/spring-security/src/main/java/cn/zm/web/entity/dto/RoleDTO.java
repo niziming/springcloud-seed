@@ -21,6 +21,6 @@ public class RoleDTO extends ObjectConvert<Role>{
     private Long id;
     @NotBlank
     @ApiModelProperty(value = "角色名称")
-    private String rolename;
+    private String roleName;
 }
 

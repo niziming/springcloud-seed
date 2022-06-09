@@ -10,7 +10,7 @@
                 username,
                 password,
                 roleId,
-                rolename,
+                roleName,
                 resourceId,
                 resourceName,
                 apiUrl
@@ -19,7 +19,7 @@
                 #{username},
                 #{password},
                 #{roleId},
-                #{rolename},
+                #{roleName},
                 #{resourceId},
                 #{resourceName},
                 #{apiUrl}
@@ -34,7 +34,7 @@
             v.username,
             v.password,
             v.roleId,
-            v.rolename,
+            v.roleName,
             v.resourceId,
             v.resourceName,
             v.apiUrl
@@ -50,8 +50,8 @@
                 = #{password}</if>
             <if test="roleId != null and roleId != ''"> and v.roleId
                 = #{roleId}</if>
-            <if test="rolename != null and rolename != ''"> and v.rolename
-                = #{rolename}</if>
+            <if test="roleName != null and roleName != ''"> and v.roleName
+                = #{roleName}</if>
             <if test="resourceId != null and resourceId != ''"> and v.resourceId
                 = #{resourceId}</if>
             <if test="resourceName != null and resourceName != ''"> and v.resourceName
@@ -68,7 +68,7 @@
             v.username,
             v.password,
             v.roleId,
-            v.rolename,
+            v.roleName,
             v.resourceId,
             v.resourceName,
             v.apiUrl
@@ -92,8 +92,8 @@
                     = #{password}</if>
                 <if test="roleId != null and roleId != ''"> , v.roleId
                     = #{roleId}</if>
-                <if test="rolename != null and rolename != ''"> , v.rolename
-                    = #{rolename}</if>
+                <if test="roleName != null and roleName != ''"> , v.roleName
+                    = #{roleName}</if>
                 <if test="resourceId != null and resourceId != ''"> , v.resourceId
                     = #{resourceId}</if>
                 <if test="resourceName != null and resourceName != ''"> , v.resourceName

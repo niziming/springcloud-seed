@@ -10,6 +10,7 @@ import lombok.Data;
 import lombok.experimental.Accessors;
 import cn.zm.web.entity.BaseResource;
 import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.security.access.PermissionEvaluator;
 
 @Data
 @Accessors(chain = true)
@@ -19,11 +20,12 @@ public class BaseResourceDTO extends ObjectConvert<BaseResource>{
     @ApiModelProperty(value = "系统资源标识")
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
-    @NotBlank
+    // @NotBlank
     @ApiModelProperty(value = "资源名称")
     private String resourceName;
-    @NotBlank
+    // @NotBlank
     @ApiModelProperty(value = "Api")
     private String apiUrl;
+
 }
 

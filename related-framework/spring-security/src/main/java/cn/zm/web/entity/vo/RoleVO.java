@@ -24,6 +24,6 @@ public class RoleVO {
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
     @ApiModelProperty(value = "角色名称")
-    private String rolename;
+    private String roleName;
 }
 

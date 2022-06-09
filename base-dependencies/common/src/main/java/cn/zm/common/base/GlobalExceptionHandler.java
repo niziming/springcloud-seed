@@ -25,8 +25,8 @@ import java.util.List;
 public class GlobalExceptionHandler {
 	@ExceptionHandler(value = Exception.class)
 	public ResResult internalErrorHandler(Exception e) {
-		log.error("happened serviceException, Caused by " +
-				"\n\n ------------------------------------" +
+		log.error("\nhappened serviceException, Caused by " +
+				"\n ------------------------------------" +
 				"--------------ERROR INFO------------" +
 				"--------------------------------------"
 				+ getMessage(e), e);

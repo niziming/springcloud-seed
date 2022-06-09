@@ -1,10 +1,6 @@
 package cn.zm.web.rest;
 
-import cn.zm.web.entity.Account;
-import cn.zm.web.entity.RelaRoleAccount;
 import cn.zm.web.entity.RelaRoleResource;
-import cn.zm.web.entity.vo.AccountVO;
-import cn.zm.web.entity.vo.RelaRoleAccountVO;
 import cn.zm.web.service.IRelaRoleResourceService;
 import cn.zm.web.entity.dto.RelaRoleResourceDTO;
 import cn.zm.web.entity.vo.RelaRoleResourceVO;
@@ -14,8 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 import cn.zm.plus.base.BaseController;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import cn.zm.common.base.ResResult;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.Api;
 import org.springframework.validation.annotation.Validated;

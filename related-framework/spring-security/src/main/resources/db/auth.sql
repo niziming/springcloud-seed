@@ -22,6 +22,6 @@ CREATE TABLE `rela_role_account` (
 
 CREATE TABLE `role` (
                         `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '角色标识',
-                        `rolename` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '角色名称',
+                        `role_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '角色名称',
                         PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='角色表';

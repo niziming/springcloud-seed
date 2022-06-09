@@ -28,7 +28,7 @@ public class RoleAccountResource {
     @ApiModelProperty(value = "角色标识")
     private Long roleId;
     @ApiModelProperty(value = "角色名称")
-    private String rolename;
+    private String roleName;
     @ApiModelProperty(value = "系统资源标识")
     private Long resourceId;
     @ApiModelProperty(value = "资源名称")
