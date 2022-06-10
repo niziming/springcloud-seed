@@ -70,51 +70,93 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
    */
   @Override
   protected void configure(HttpSecurity httpSecurity) throws Exception {
-    // httpSecurity.authorizeRequests().antMatchers(ignore).permitAll()
-    //   .anyRequest().authenticated();
-
-    // Add a filter to validate the tokens with every request
-
-    // We don't need CSRF for this example
-    httpSecurity.csrf().disable()
-      // dont authenticate this particular request
-      .authorizeRequests()
-      // .antMatchers(ignore)
-      // .permitAll()
-      .antMatchers("/emp/url").hasRole("emp")
-      // all other requests need to be authenticated
-      //其他的需要登陆后才能访问
+    httpSecurity.authorizeRequests()
+      // 不进行权限验证的请求或资源(从配置文件中读取)
+      .antMatchers(ignore).permitAll()
+      // 其他的需要登陆后才能访问
       .anyRequest().authenticated()
       .and()
-      //配置未登录自定义处理类
+      // 配置未登录自定义处理类
       .httpBasic().authenticationEntryPoint(userAuthenticationEntryPointHandler)
       .and()
-      //配置登录地址
+      // 配置登录地址
       .formLogin()
-      .loginProcessingUrl("/jwt/authenticate")
-      //配置登录成功自定义处理类
+      .loginProcessingUrl("/authenticated")
+      // 配置登录成功自定义处理类
       .successHandler(userLoginSuccessHandler)
-      //配置登录失败自定义处理类
+      // 配置登录失败自定义处理类
       .failureHandler(userLoginFailureHandler)
       .and()
-      //配置登出地址
+      // 配置登出地址
       .logout()
-      .logoutUrl("/jwt/authenticate/cancel")
-      //配置用户登出自定义处理类
+      .logoutUrl("/logout")
+      // 配置用户登出自定义处理类
       .logoutSuccessHandler(userLogoutSuccessHandler)
       .and()
-
-      // make sure we use stateless session; session won't be used to
-      // store user's state.
       // 配置没有权限自定义处理类
-      .exceptionHandling().accessDeniedHandler(userAuthAccessDeniedHandler).and().sessionManagement()
-      .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+      .exceptionHandling().accessDeniedHandler(userAuthAccessDeniedHandler)
+      .and()
+      // 开启跨域
+      .cors()
+      .and()
+      // 取消跨站请求伪造防护
+      .csrf().disable();
+    // 基于Token不需要session
+    httpSecurity.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+    // 禁用缓存
+    httpSecurity.headers().cacheControl();
+    // 添加JWT过滤器
+    // httpSecurity.addFilter(new JWTAuthenticationTokenFilter(authenticationManager()));
+    // httpSecurity.addFilter(jwtRequestFilter);
 
-    // Add a filter to validate the permissions with every request
 
+    // // httpSecurity.authorizeRequests().antMatchers(ignore).permitAll()
+    // //   .anyRequest().authenticated();
+    //
+    // // Add a filter to validate the tokens with every request
+    //
+    // // We don't need CSRF for this example
+    // httpSecurity.csrf().disable()
+    //   // dont authenticate this particular request
+    //   .authorizeRequests()
+    //   // .antMatchers(ignore)
+    //   // .permitAll()
+    //   // .antMatchers("/login", "/captchaImage").anonymous()
+    //   .antMatchers("/emp/url").hasRole("emp")
+    //   // all other requests need to be authenticated
+    //   //其他的需要登陆后才能访问
+    //   .anyRequest().authenticated()
+    //   .and()
+    //   //配置未登录自定义处理类
+    //   .httpBasic().authenticationEntryPoint(userAuthenticationEntryPointHandler)
+    //   .and()
+    //   //配置登录地址
+    //   .formLogin()
+    //   .loginProcessingUrl("/jwt/authenticate")
+    //   //配置登录成功自定义处理类
+    //   .successHandler(userLoginSuccessHandler)
+    //   //配置登录失败自定义处理类
+    //   .failureHandler(userLoginFailureHandler)
+    //   .permitAll()
+    //   .and()
+    //   //配置登出地址
+    //   .logout()
+    //   .logoutUrl("/jwt/authenticate/cancel")
+    //   //配置用户登出自定义处理类
+    //   .logoutSuccessHandler(userLogoutSuccessHandler)
+    //   .and()
+    //
+    //   // make sure we use stateless session; session won't be used to
+    //   // store user's state.
+    //   // 配置没有权限自定义处理类
+    //   .exceptionHandling().accessDeniedHandler(userAuthAccessDeniedHandler).and().sessionManagement()
+    //   .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+    //
+    // // Add a filter to validate the permissions with every request
+    //
     httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
-
-    // httpSecurity.addFilter(permissionsFilter);
+    //
+    // // httpSecurity.addFilter(permissionsFilter);
   }
 
   /**

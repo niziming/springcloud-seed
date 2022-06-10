@@ -33,7 +33,7 @@ public class JwtUserDetailsService implements UserDetailsService {
   // 这里可以查询数据库推入到userdetails中 可以将缓存写在此处 此处密码账户写死在配置中的
   @Override
   public SecurityAccount loadUserByUsername(String username) throws UsernameNotFoundException {
-    SecurityAccount securityAccount = SecurityAccount.builder().build();
+    SecurityAccount securityAccount = null;
     if (admin.equals(username)) { // 密码加密前为 password
       securityAccount = SecurityAccount.builder()
         .username(admin)
@@ -42,9 +42,11 @@ public class JwtUserDetailsService implements UserDetailsService {
         .build();
     } else {
       Account account = accountService.getOne(new QueryWrapper<>(Account.builder().username(username).build()));
-      if (null == account)
-        throw new UsernameNotFoundException("User not found with username: " + username);
-      BeanUtils.copyProperties(account, securityAccount);
+      if (null != account) {
+        securityAccount = SecurityAccount.builder().build();
+        BeanUtils.copyProperties(account, securityAccount);
+      }
+        // throw new UsernameNotFoundException("User not found with username: " + username);
     }
     return securityAccount;
   }

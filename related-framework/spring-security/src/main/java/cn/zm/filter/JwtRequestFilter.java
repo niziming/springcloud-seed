@@ -7,6 +7,7 @@ import io.jsonwebtoken.ExpiredJwtException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -32,6 +33,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 
   @Value("${jwt.token.prefix}")
   private String prefix;
+
 
   @Override
   protected void doFilterInternal(
@@ -63,7 +65,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     } else {
       logger.warn("JWT Token does not begin with Bearer String");
     }
-    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    // Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
     // Once we get the token validate it.
     if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
 

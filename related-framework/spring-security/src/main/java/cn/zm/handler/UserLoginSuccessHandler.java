@@ -1,5 +1,6 @@
 package cn.zm.handler;
 
+import cn.zm.entity.SecurityAccount;
 import cn.zm.util.JwtTokenUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +36,8 @@ public class UserLoginSuccessHandler implements AuthenticationSuccessHandler {
   @Override
   public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException {
     // 组装JWT
-    String username = (String) authentication.getPrincipal();
+    SecurityAccount securityAccount = (SecurityAccount) authentication.getPrincipal();
+    String username = securityAccount.getUsername();
     // String token = JWTTokenUtil.createAccessToken(selfUserEntity);
     // token = JWTConfig.tokenPrefix + token;
 

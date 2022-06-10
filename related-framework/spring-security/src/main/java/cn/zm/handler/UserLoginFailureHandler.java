@@ -17,6 +17,7 @@ import java.io.IOException;
  */
 @Slf4j
 @Component
+// public class UserLoginFailureHandler implements AuthenticationFailureHandler {
 public class UserLoginFailureHandler implements AuthenticationFailureHandler {
   /**
    * 登录失败返回结果
@@ -37,7 +38,6 @@ public class UserLoginFailureHandler implements AuthenticationFailureHandler {
       response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "User locked");
     if (exception instanceof BadCredentialsException)
       response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Bad credentials");
-    log.info("[登录失败]" + exception.getMessage());
     response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Login failed");
   }
 }

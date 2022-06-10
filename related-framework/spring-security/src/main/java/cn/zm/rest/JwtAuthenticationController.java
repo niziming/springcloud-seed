@@ -1,17 +1,25 @@
 package cn.zm.rest;
 
+import cn.hutool.core.lang.Assert;
+import cn.hutool.core.util.ArrayUtil;
 import cn.zm.entity.JwtRequest;
+import cn.zm.web.entity.Account;
 import cn.zm.web.entity.RoleAccountResource;
 import cn.zm.entity.JwtResponse;
 import cn.zm.service.JwtUserDetailsService;
 import cn.zm.util.JwtTokenUtil;
 import cn.zm.web.entity.Role;
+import cn.zm.web.entity.dto.AccountDTO;
+import cn.zm.web.entity.vo.AccountVO;
+import cn.zm.web.service.IAccountService;
 import cn.zm.web.service.IRoleAccountResourceService;
 import cn.zm.web.service.IRoleService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -19,11 +27,14 @@ import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -48,12 +59,18 @@ public class JwtAuthenticationController {
   @Resource
   private IRoleAccountResourceService roleAccountResourceService;
 
+  @Resource
+  private IAccountService accountService;
+
+  @Value("${jwt.token.prefix}")
+  private String prefix;
+
   @ApiOperation("认证")
   @PostMapping("/authenticate")
   public ResponseEntity<JwtResponse> createAuthenticationToken(
     @RequestBody JwtRequest authenticationRequest,
     HttpServletResponse response
-    ) {
+  ) {
 
     authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
 
@@ -62,19 +79,37 @@ public class JwtAuthenticationController {
 
     final String token = jwtTokenUtil.generateToken(userDetails);
 
-    return ResponseEntity.ok(new JwtResponse(token));
+    return ResponseEntity.ok(new JwtResponse(prefix+token));
+  }
+
+  @ApiOperation("注册")
+  @PostMapping("/register")
+  public ResponseEntity<AccountVO> register(
+    @RequestBody @Validated AccountDTO accountDTO
+  ) {
+    Account account = Account.builder().username(accountDTO.getUsername()).build();
+    List<Account> list = accountService.list(new QueryWrapper<>(account));
+    Assert.isTrue(list.size() == 0, "此用户名已注册");
+
+    account.setPassword(new BCryptPasswordEncoder().encode(accountDTO.getPassword()));
+
+    accountService.save(account);
+    AccountVO vo = AccountVO.builder().build();
+    BeanUtils.copyProperties(account, vo);
+
+    return ResponseEntity.ok(vo);
   }
 
   // authenticate 认证
-  private void authenticate(String username, String password)  {
-    try {
-      UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, password);
-      authenticationManager.authenticate(authenticationToken);
-    } catch (DisabledException e) {
-      throw new DisabledException("USER_DISABLED", e);
-    } catch (BadCredentialsException e) {
-      throw new BadCredentialsException("INVALID_CREDENTIALS", e);
-    }
+  private void authenticate(String username, String password) throws DisabledException, BadCredentialsException {
+    // try {
+    UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, password);
+    authenticationManager.authenticate(authenticationToken);
+    // } catch (DisabledException e) {
+    //   throw new DisabledException("USER_DISABLED", e);
+    // } catch (BadCredentialsException e) {
+    //   throw new BadCredentialsException("INVALID_CREDENTIALS", e);
+    // }
   }
 
 }

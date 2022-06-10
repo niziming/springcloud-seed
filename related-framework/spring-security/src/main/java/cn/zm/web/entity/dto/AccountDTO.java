@@ -9,6 +9,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.experimental.Accessors;
 import cn.zm.web.entity.Account;
+import org.hibernate.validator.constraints.NotBlank;
 
 
 @Data
@@ -19,10 +20,10 @@ public class AccountDTO extends ObjectConvert<Account>{
     @ApiModelProperty(value = "账户标识")
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
-    // @NotBlank
+    @NotBlank
     @ApiModelProperty(value = "账户")
     private String username;
-    // @NotBlank
+    @NotBlank
     @ApiModelProperty(value = "密码")
     private String password;
 }
