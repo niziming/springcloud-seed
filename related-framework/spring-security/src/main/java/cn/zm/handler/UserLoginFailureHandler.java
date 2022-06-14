@@ -32,13 +32,15 @@ public class UserLoginFailureHandler implements AuthenticationFailureHandler {
     AuthenticationException exception
   ) throws IOException {
     // 这些对于操作的处理类可以根据不同异常进行不同处理
-    if (exception instanceof UsernameNotFoundException)
+    if (exception instanceof UsernameNotFoundException) {
       response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Username not found");
-    if (exception instanceof LockedException)
+    } else if (exception instanceof LockedException) {
       response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "User locked");
-    if (exception instanceof BadCredentialsException)
+    } else if (exception instanceof BadCredentialsException) {
       response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Bad credentials");
-    response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Login failed");
+    } else {
+      response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Login failed");
+    }
   }
 }
 

@@ -50,9 +50,8 @@ public class UserAuthenticationProvider implements AuthenticationProvider {
         }
         // 我们还要判断密码是否正确，这里我们的密码使用BCryptPasswordEncoder进行加密的
         if (!new BCryptPasswordEncoder().matches(password, securityAccount.getPassword())) {
-            throw new BadCredentialsException("BadCredentialsException");
+            throw new BadCredentialsException("Bad credentials");
         }
-
         // 还可以加一些其他信息的判断，比如用户账号已停用等判断
         if (securityAccount.getStatus() != null && securityAccount.getStatus().equals("PROHIBIT")){
             throw new LockedException("LockedException");

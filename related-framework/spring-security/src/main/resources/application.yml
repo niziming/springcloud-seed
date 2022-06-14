@@ -14,4 +14,4 @@ jwt:
     prefix: "Bearer "
   admin: jermaine
   secret: jermaine_secret # 千万不能使用中文.
-  ignore: /doc.html,/webjars/**,/favicon.ico,/swagger-resources/**,/v2/api-docs/**,/v2/api-docs**,/security/not/authentication,/jwt/authenticate,/jwt/register
+  ignore: /doc.html,/webjars/**,/favicon.ico,/swagger-resources/**,/v2/api-docs/**,/v2/api-docs**,/security/not/authentication,/jwt/authenticate,/jwt/register,/authenticated
