@@ -22,6 +22,7 @@
         <module>RabittMQ</module>
         <module>netty</module>
         <module>spring-security</module>
+        <module>ShardingSphere</module>
     </modules>
 
 </project>
