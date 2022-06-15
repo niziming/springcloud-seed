@@ -1,4 +1,4 @@
-package cn.zm.mq;
+package cn.zm.mq.mq;
 
 
 import com.rabbitmq.client.Channel;

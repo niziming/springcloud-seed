@@ -16,7 +16,6 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <druid.version>1.1.22</druid.version>
         <hutool.version>5.3.10</hutool.version>
         <knife4j.version>2.0.8</knife4j.version>
         <mysql.version>8.0.27</mysql.version>
@@ -25,29 +24,9 @@
     </properties>
 
     <dependencies>
-        <!-- mysql-connector -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.google.protobuf</groupId>
-                    <artifactId>protobuf-java</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
         <dependency>
             <groupId>cn.zm</groupId>
             <artifactId>knife4j</artifactId>
-        </dependency>
-
-        <!--druid线程池-->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid-spring-boot-starter</artifactId>
-            <version>${druid.version}</version>
         </dependency>
 
         <!-- commons-lang3 -->
@@ -118,8 +97,8 @@
             <artifactId>hibernate-validator</artifactId>
             <!--<version>5.2.4.Final</version>-->
             <version>${hibernate-validator.version}</version>
-
         </dependency>
+
     </dependencies>
 
 </project>
