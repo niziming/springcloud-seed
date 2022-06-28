@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
 import ${superControllerClassPackage};
 </#if>
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import cn.zm.common.base.ResResult;
+import ResResult;
 import ${package.Entity}.dto.<#if entity?ends_with("DTO")>${entity? cap_first? substring(0, entity? index_of("DTO"))}<#else>${entity? cap_first}</#if>DTO;
 import ${package.Entity}.vo.<#if entity?ends_with("VO")>${entity? cap_first? substring(0, entity? index_of("VO"))}<#else>${entity? cap_first}</#if>VO;
 import io.swagger.annotations.ApiImplicitParam;

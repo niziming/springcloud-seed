@@ -1,10 +1,8 @@
 // OrderConfigMapperTest.java
 
-import cn.zm.sharding.sphere.Application;
-import cn.zm.sharding.sphere.dataobject.Order;
-import cn.zm.sharding.sphere.dataobject.OrderConfig;
-import cn.zm.sharding.sphere.mapper.OrderConfigMapper;
-import cn.zm.sharding.sphere.mapper.OrderMapper;
+import cn.zm.mq.sharding.sphere.Application;
+import cn.zm.mq.sharding.sphere.dataobject.Order;
+import cn.zm.mq.sharding.sphere.mapper.OrderMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

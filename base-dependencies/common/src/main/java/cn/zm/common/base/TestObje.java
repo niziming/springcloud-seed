@@ -1,7 +1,6 @@
 package cn.zm.common.base;
 
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
 @Data
 @Builder

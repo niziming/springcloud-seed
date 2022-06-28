@@ -7,10 +7,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
-import javax.annotation.Resource;
-import java.util.concurrent.CompletableFuture;
-import java.util.function.Supplier;
-
 /**
  * 覆盖spring 默认线程池
  *
