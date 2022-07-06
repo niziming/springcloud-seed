@@ -1,4 +1,4 @@
-package cn.zm.mq.config;
+package cn.zm.knife4j.config;
 
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import com.github.xiaoymin.knife4j.spring.extension.OpenApiExtensionResolver;

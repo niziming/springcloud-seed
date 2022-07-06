@@ -1,6 +1,6 @@
 package cn.zm.security.config;
 
-import cn.zm.mq.config.Knife4jConfiguration;
+import cn.zm.knife4j.config.Knife4jConfiguration;
 import cn.zm.security.util.JwtTokenUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
