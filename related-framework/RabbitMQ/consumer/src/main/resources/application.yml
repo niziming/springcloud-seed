@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: consume
+  main:
+    allow-bean-definition-overriding: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    exchange: zm.exchange
+    queue: zm.queue
+    routingkey: zm.routingkey
+server:
+  port: 8002

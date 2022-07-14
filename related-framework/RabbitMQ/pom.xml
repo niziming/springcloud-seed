@@ -12,8 +12,9 @@
     <artifactId>RabbitMQ</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>PushingMSG</module>
-        <module>ConsumeMsg</module>
+        <module>producter</module>
+        <module>consumer</module>
+        <module>exchange</module>
     </modules>
 
     <properties>

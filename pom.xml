@@ -25,7 +25,7 @@
     </description>
 
     <modules>
-        <module>base-dependencies</module>
+        <module>baseframe</module>
         <module>micro-service</module>
         <module>related-framework</module>
     </modules>
