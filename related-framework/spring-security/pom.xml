@@ -29,6 +29,11 @@
             <artifactId>mybatis-plus</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>cn.zm</groupId>
+            <artifactId>datasource</artifactId>
+        </dependency>
+
 
 
         <!--jwt-->

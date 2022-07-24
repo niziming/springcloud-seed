@@ -85,6 +85,14 @@
                 <version>${project.version}</version>
             </dependency>
 
+
+            <dependency>
+                <groupId>cn.zm</groupId>
+                <artifactId>datasource</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+
             <dependency>
                 <groupId>cn.zm</groupId>
                 <artifactId>tk-mybatis</artifactId>
