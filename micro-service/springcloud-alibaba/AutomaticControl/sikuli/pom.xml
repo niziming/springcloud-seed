@@ -25,13 +25,13 @@
             <version>2.0.5</version>
         </dependency>
 
-        <dependency>
-            <groupId>opencv-455.jar</groupId>
-            <artifactId>opencv-455.jar</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/OpenCV/opencv-455.jar</systemPath>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>opencv-455.jar</groupId>-->
+<!--            <artifactId>opencv-455.jar</artifactId>-->
+<!--            <version>1.0</version>-->
+<!--            <scope>system</scope>-->
+<!--            <systemPath>${project.basedir}/lib/OpenCV/opencv-455.jar</systemPath>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>cn.zm</groupId>
