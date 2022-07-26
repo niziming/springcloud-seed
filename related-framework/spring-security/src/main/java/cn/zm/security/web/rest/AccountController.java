@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 /**
@@ -40,12 +41,15 @@ public class AccountController extends BaseController {
     //     @ApiImplicitParam(name = "orderByColumn", value = "排序字段", dataTypeClass = String.class),
     //     @ApiImplicitParam(name = "isDesc", value = "是否降序", dataTypeClass = boolean.class)
     // })
-    public ResResult<IPage<AccountVO>> getByPage(@Validated AccountDTO account) {
+    public ResResult<IPage<AccountVO>> getByPage(AccountDTO account) {
         // TODO 分页查询
         IPage<AccountVO> page = accountService.selectByPage(getPage(), account);
         return ResResult.succ(page);
     }
 
+    public static void main(String[] args) {
+        System.out.println(UUID.randomUUID());
+    }
     @GetMapping("list")
     @ApiOperation("账户表list查询")
     // @ApiImplicitParams({
