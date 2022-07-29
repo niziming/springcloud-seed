@@ -4,6 +4,7 @@ import cn.zm.knife4j.config.Knife4jConfiguration;
 import cn.zm.security.util.JwtTokenUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -31,11 +32,14 @@ public class Knife4jConfig {
   @Autowired
   UserDetailsService userDetailsService;
 
+  @Value("${jwt.admin}")
+  private String tokenUser;
+
   @Bean(value = "defaultApi2")
   public Docket defaultApi2() {
     // public Docket defaultApi2(@Qualifier(value="knife4j") Docket docket){
 
-    UserDetails userDetails = userDetailsService.loadUserByUsername("jermaine");
+    UserDetails userDetails = userDetailsService.loadUserByUsername(tokenUser);
     String token = jwtTokenUtil.generateToken(userDetails);
     log.info("token: {}","Bearer "+token);
     Docket docket = Knife4jConfiguration.defaultApi2();

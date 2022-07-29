@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.11, for Win64 (x86_64)
 --
--- Host: localhost    Database: testdb
+-- Host: localhost    Database: oauth_rbac
 -- ------------------------------------------------------
 -- Server version	8.0.11
 
@@ -159,7 +159,7 @@ SET character_set_client = utf8mb4;
 SET character_set_client = @saved_cs_client;
 
 --
--- Dumping routines for database 'testdb'
+-- Dumping routines for database 'oauth_rbac'
 --
 
 --
