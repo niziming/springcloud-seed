@@ -1,6 +1,7 @@
 package cn.zm.security.web.rest;
 
 import cn.zm.common.base.ResResult;
+import cn.zm.security.anno.DataScope;
 import cn.zm.security.web.entity.BaseResource;
 import cn.zm.security.web.entity.dto.BaseResourceDTO;
 import cn.zm.security.web.entity.vo.BaseResourceVO;
@@ -33,6 +34,7 @@ public class BaseResourceController extends BaseController {
     private IBaseResourceService baseResourceService;
 
     @GetMapping
+    @DataScope(scopes = "A")
     @ApiOperation("系统资源表page查询")
     // @ApiImplicitParams({
     //     @ApiImplicitParam(name = "page", value = "当前页数", defaultValue = "1"),
