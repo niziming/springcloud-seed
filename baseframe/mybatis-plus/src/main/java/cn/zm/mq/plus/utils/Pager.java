@@ -1,28 +1,31 @@
-package cn.zm.mq.plus.base;
+package cn.zm.mq.plus.utils;
 
+import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.convert.Convert;
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.BeanUtils;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Objects;
-import java.util.Optional;
+import java.util.stream.Collectors;
 
-/** 功能描述: <br>
- * <基础controller>
- *
- * @author 十渊
- * @date 2021/10/12 13:28
- * @return
- */
+/**
+ * <分页工具>
+ * @author 十渊Jermaine niziming@mabangerp.com
+ * @version 1.0
+ * @date 2022/7/28
+*/
 @Slf4j
-public class  BaseController {
+public class Pager {
     private final static String PAGE = "page";
 
     private final static String SIZE = "size";
@@ -31,12 +34,38 @@ public class  BaseController {
 
     private final static String IS_DESC = "isDesc";
 
+
     /**
-     * 分页查询
-     *
-     * @return 分页对象
-     */
-    public <T> IPage<T> getPage() {
+     * <DTO 入参查询 分页 返回VO>
+     * @author 十渊Jermaine jermainenee@yeah.net
+     * @version 1.0
+     * @date 2022/7/29
+    */
+    public static <E, T> IPage<E> getPageDTO2VO(BaseMapper baseMapper, Wrapper wrapper, Class<E> eClass) {
+        IPage<T> page = getPage();
+        IPage<T> entityPage = baseMapper.selectPage(page, wrapper);
+        IPage<E> pageViews = new Page<>();
+        BeanUtil.copyProperties(page, pageViews);
+        IPage<E> iPage = pageViews.setRecords(entityPage.getRecords().stream().map(e -> {
+            E vo = null;
+            try {
+                vo = eClass.newInstance();
+            } catch (InstantiationException | IllegalAccessException ex) {
+                throw new RuntimeException(ex);
+            }
+            BeanUtils.copyProperties(e, vo);
+            return vo;
+        }).collect(Collectors.toList()));
+        return iPage;
+    }
+
+    /**
+     * <截取http的分页排序参数>
+     * @author 十渊Jermaine jermainenee@yeah.net
+     * @version 1.0
+     * @date 2022/7/29
+    */
+    public static <T> IPage<T> getPage() {
         HttpServletRequest request = getRequest();
         log.debug("当前页数: [{}], 每页数量: [{}], 排序字段: [{}], 是否降序: [{}]",
                 request.getParameter(PAGE),
@@ -51,20 +80,20 @@ public class  BaseController {
         Page<T> iPage = new Page<>(page, size);
         if (StringUtils.isNotBlank(orderByColumn)) {
             OrderItem orderItem = Objects.isNull(isDesc) ?
-              OrderItem.asc(orderByColumn) :
-              isDesc ? OrderItem.desc(orderByColumn) :
-                OrderItem.asc(orderByColumn);
+                    OrderItem.asc(orderByColumn) :
+                    isDesc ? OrderItem.desc(orderByColumn) :
+                            OrderItem.asc(orderByColumn);
             iPage.addOrder(orderItem);
         }
         return iPage;
     }
 
-    private ServletRequestAttributes getAttributes() {
+    private static ServletRequestAttributes getAttributes() {
         RequestAttributes attributes = RequestContextHolder.getRequestAttributes();
         return (ServletRequestAttributes) attributes;
     }
 
-    private HttpServletRequest getRequest() {
+    private static HttpServletRequest getRequest() {
         return getAttributes().getRequest();
     }
 

@@ -1,12 +1,16 @@
 package cn.zm.mq.plus.utils;
 
-import cn.zm.common.base.BaseEntity;
 import org.springframework.beans.BeanUtils;
 
 import java.lang.reflect.ParameterizedType;
 
+/**
+ * <对象转换工具>
+ * @author 十渊Jermaine jermainenee@yeah.net
+ * @version 1.0
+ * @date 2022/7/28
+*/
 public class ObjectConvert<T>
-  extends BaseEntity
 {
 
     protected void beforeConvert() {
