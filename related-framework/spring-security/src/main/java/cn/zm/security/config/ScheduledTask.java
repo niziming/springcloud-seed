@@ -1,11 +1,14 @@
 package cn.zm.security.config;
 
 
+import com.alibaba.fastjson.JSONArray;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
 
 /**
  *
@@ -24,4 +27,14 @@ public class ScheduledTask {
   // public void oneSecedeOnce () {
   //   log.info("一秒一次");
   // }
+
+    public static void main(String[] args) {
+
+        ArrayList<Long> objects = new ArrayList<>();
+        objects.add(1L);
+        objects.add(2L);
+        String s = JSONArray.toJSONString(objects);
+        System.out.println(s);
+
+    }
 }
