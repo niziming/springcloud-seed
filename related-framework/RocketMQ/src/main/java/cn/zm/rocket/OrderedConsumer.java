@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class OrderedConsumer {
+    // 
     public static void main(String[] args) throws Exception {
         // 1. 创建消费者，并指定消费者组名
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("ordered_consumer_group");
