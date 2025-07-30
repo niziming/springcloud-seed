@@ -2,18 +2,26 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!--    <parent>-->
+    <!--        <artifactId>baseframe</artifactId>-->
+    <!--        <groupId>cn.zm</groupId>-->
+    <!--        <version>1.0-SNAPSHOT</version>-->
+    <!--    </parent>-->
     <parent>
-        <artifactId>baseframe</artifactId>
-        <groupId>cn.zm</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.2.RELEASE</version>
+        <!--<version>2.2.4.RELEASE</version>-->
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <modelVersion>4.0.0</modelVersion>
 
+    <modelVersion>4.0.0</modelVersion>
+    <version>1.0</version>
     <artifactId>knife4j</artifactId>
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <!--        <maven.compiler.source>8</maven.compiler.source>-->
+        <!--        <maven.compiler.target>8</maven.compiler.target>-->
         <knife4j.version>3.0.3</knife4j.version>
     </properties>
 

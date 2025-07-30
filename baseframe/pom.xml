@@ -21,7 +21,7 @@
         <module>tk-mybatis</module>
         <module>mybatis-plus</module>
         <module>async-programing</module>
-        <module>knife4j</module>
+<!--        <module>knife4j</module>-->
         <module>datasource</module>
     </modules>
     <properties>
